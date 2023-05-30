@@ -1,0 +1,609 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AD58CFC42A26522F00154EDF /* EntomologyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD58CFC32A26522F00154EDF /* EntomologyApp.swift */; };
+		AD58CFC62A26522F00154EDF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD58CFC52A26522F00154EDF /* ContentView.swift */; };
+		AD58CFC82A26523200154EDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD58CFC72A26523200154EDF /* Assets.xcassets */; };
+		AD58CFCB2A26523200154EDF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD58CFCA2A26523200154EDF /* Preview Assets.xcassets */; };
+		AD58CFCD2A26523200154EDF /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD58CFCC2A26523200154EDF /* Persistence.swift */; };
+		AD58CFD02A26523200154EDF /* Entomology.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AD58CFCE2A26523200154EDF /* Entomology.xcdatamodeld */; };
+		AD58CFDA2A26523300154EDF /* EntomologyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD58CFD92A26523300154EDF /* EntomologyTests.swift */; };
+		AD58CFE42A26523300154EDF /* EntomologyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD58CFE32A26523300154EDF /* EntomologyUITests.swift */; };
+		AD58CFE62A26523300154EDF /* EntomologyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD58CFE52A26523300154EDF /* EntomologyUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AD58CFD62A26523300154EDF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD58CFB82A26522F00154EDF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD58CFBF2A26522F00154EDF;
+			remoteInfo = Entomology;
+		};
+		AD58CFE02A26523300154EDF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD58CFB82A26522F00154EDF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD58CFBF2A26522F00154EDF;
+			remoteInfo = Entomology;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AD58CFC02A26522F00154EDF /* Entomology.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Entomology.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD58CFC32A26522F00154EDF /* EntomologyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntomologyApp.swift; sourceTree = "<group>"; };
+		AD58CFC52A26522F00154EDF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AD58CFC72A26523200154EDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AD58CFCA2A26523200154EDF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AD58CFCC2A26523200154EDF /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		AD58CFCF2A26523200154EDF /* Entomology.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Entomology.xcdatamodel; sourceTree = "<group>"; };
+		AD58CFD52A26523300154EDF /* EntomologyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EntomologyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD58CFD92A26523300154EDF /* EntomologyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntomologyTests.swift; sourceTree = "<group>"; };
+		AD58CFDF2A26523300154EDF /* EntomologyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EntomologyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD58CFE32A26523300154EDF /* EntomologyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntomologyUITests.swift; sourceTree = "<group>"; };
+		AD58CFE52A26523300154EDF /* EntomologyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntomologyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AD58CFBD2A26522F00154EDF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD58CFD22A26523300154EDF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD58CFDC2A26523300154EDF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AD58CFB72A26522F00154EDF = {
+			isa = PBXGroup;
+			children = (
+				AD58CFC22A26522F00154EDF /* Entomology */,
+				AD58CFD82A26523300154EDF /* EntomologyTests */,
+				AD58CFE22A26523300154EDF /* EntomologyUITests */,
+				AD58CFC12A26522F00154EDF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AD58CFC12A26522F00154EDF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AD58CFC02A26522F00154EDF /* Entomology.app */,
+				AD58CFD52A26523300154EDF /* EntomologyTests.xctest */,
+				AD58CFDF2A26523300154EDF /* EntomologyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AD58CFC22A26522F00154EDF /* Entomology */ = {
+			isa = PBXGroup;
+			children = (
+				AD58CFC32A26522F00154EDF /* EntomologyApp.swift */,
+				AD58CFC52A26522F00154EDF /* ContentView.swift */,
+				AD58CFC72A26523200154EDF /* Assets.xcassets */,
+				AD58CFCC2A26523200154EDF /* Persistence.swift */,
+				AD58CFCE2A26523200154EDF /* Entomology.xcdatamodeld */,
+				AD58CFC92A26523200154EDF /* Preview Content */,
+			);
+			path = Entomology;
+			sourceTree = "<group>";
+		};
+		AD58CFC92A26523200154EDF /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				AD58CFCA2A26523200154EDF /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AD58CFD82A26523300154EDF /* EntomologyTests */ = {
+			isa = PBXGroup;
+			children = (
+				AD58CFD92A26523300154EDF /* EntomologyTests.swift */,
+			);
+			path = EntomologyTests;
+			sourceTree = "<group>";
+		};
+		AD58CFE22A26523300154EDF /* EntomologyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AD58CFE32A26523300154EDF /* EntomologyUITests.swift */,
+				AD58CFE52A26523300154EDF /* EntomologyUITestsLaunchTests.swift */,
+			);
+			path = EntomologyUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AD58CFBF2A26522F00154EDF /* Entomology */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD58CFE92A26523300154EDF /* Build configuration list for PBXNativeTarget "Entomology" */;
+			buildPhases = (
+				AD58CFBC2A26522F00154EDF /* Sources */,
+				AD58CFBD2A26522F00154EDF /* Frameworks */,
+				AD58CFBE2A26522F00154EDF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Entomology;
+			productName = Entomology;
+			productReference = AD58CFC02A26522F00154EDF /* Entomology.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AD58CFD42A26523300154EDF /* EntomologyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD58CFEC2A26523300154EDF /* Build configuration list for PBXNativeTarget "EntomologyTests" */;
+			buildPhases = (
+				AD58CFD12A26523300154EDF /* Sources */,
+				AD58CFD22A26523300154EDF /* Frameworks */,
+				AD58CFD32A26523300154EDF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AD58CFD72A26523300154EDF /* PBXTargetDependency */,
+			);
+			name = EntomologyTests;
+			productName = EntomologyTests;
+			productReference = AD58CFD52A26523300154EDF /* EntomologyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AD58CFDE2A26523300154EDF /* EntomologyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD58CFEF2A26523300154EDF /* Build configuration list for PBXNativeTarget "EntomologyUITests" */;
+			buildPhases = (
+				AD58CFDB2A26523300154EDF /* Sources */,
+				AD58CFDC2A26523300154EDF /* Frameworks */,
+				AD58CFDD2A26523300154EDF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AD58CFE12A26523300154EDF /* PBXTargetDependency */,
+			);
+			name = EntomologyUITests;
+			productName = EntomologyUITests;
+			productReference = AD58CFDF2A26523300154EDF /* EntomologyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AD58CFB82A26522F00154EDF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					AD58CFBF2A26522F00154EDF = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					AD58CFD42A26523300154EDF = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = AD58CFBF2A26522F00154EDF;
+					};
+					AD58CFDE2A26523300154EDF = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = AD58CFBF2A26522F00154EDF;
+					};
+				};
+			};
+			buildConfigurationList = AD58CFBB2A26522F00154EDF /* Build configuration list for PBXProject "Entomology" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AD58CFB72A26522F00154EDF;
+			productRefGroup = AD58CFC12A26522F00154EDF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AD58CFBF2A26522F00154EDF /* Entomology */,
+				AD58CFD42A26523300154EDF /* EntomologyTests */,
+				AD58CFDE2A26523300154EDF /* EntomologyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AD58CFBE2A26522F00154EDF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD58CFCB2A26523200154EDF /* Preview Assets.xcassets in Resources */,
+				AD58CFC82A26523200154EDF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD58CFD32A26523300154EDF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD58CFDD2A26523300154EDF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AD58CFBC2A26522F00154EDF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD58CFD02A26523200154EDF /* Entomology.xcdatamodeld in Sources */,
+				AD58CFCD2A26523200154EDF /* Persistence.swift in Sources */,
+				AD58CFC62A26522F00154EDF /* ContentView.swift in Sources */,
+				AD58CFC42A26522F00154EDF /* EntomologyApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD58CFD12A26523300154EDF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD58CFDA2A26523300154EDF /* EntomologyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD58CFDB2A26523300154EDF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD58CFE42A26523300154EDF /* EntomologyUITests.swift in Sources */,
+				AD58CFE62A26523300154EDF /* EntomologyUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AD58CFD72A26523300154EDF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD58CFBF2A26522F00154EDF /* Entomology */;
+			targetProxy = AD58CFD62A26523300154EDF /* PBXContainerItemProxy */;
+		};
+		AD58CFE12A26523300154EDF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD58CFBF2A26522F00154EDF /* Entomology */;
+			targetProxy = AD58CFE02A26523300154EDF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		AD58CFE72A26523300154EDF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AD58CFE82A26523300154EDF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AD58CFEA2A26523300154EDF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Entomology/Preview Content\"";
+				DEVELOPMENT_TEAM = B97JTSGWZ2;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shibuyaxpress.Entomology;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AD58CFEB2A26523300154EDF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Entomology/Preview Content\"";
+				DEVELOPMENT_TEAM = B97JTSGWZ2;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shibuyaxpress.Entomology;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AD58CFED2A26523300154EDF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B97JTSGWZ2;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shibuyaxpress.EntomologyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Entomology.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Entomology";
+			};
+			name = Debug;
+		};
+		AD58CFEE2A26523300154EDF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B97JTSGWZ2;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shibuyaxpress.EntomologyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Entomology.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Entomology";
+			};
+			name = Release;
+		};
+		AD58CFF02A26523300154EDF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B97JTSGWZ2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shibuyaxpress.EntomologyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Entomology;
+			};
+			name = Debug;
+		};
+		AD58CFF12A26523300154EDF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B97JTSGWZ2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shibuyaxpress.EntomologyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Entomology;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AD58CFBB2A26522F00154EDF /* Build configuration list for PBXProject "Entomology" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD58CFE72A26523300154EDF /* Debug */,
+				AD58CFE82A26523300154EDF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD58CFE92A26523300154EDF /* Build configuration list for PBXNativeTarget "Entomology" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD58CFEA2A26523300154EDF /* Debug */,
+				AD58CFEB2A26523300154EDF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD58CFEC2A26523300154EDF /* Build configuration list for PBXNativeTarget "EntomologyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD58CFED2A26523300154EDF /* Debug */,
+				AD58CFEE2A26523300154EDF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD58CFEF2A26523300154EDF /* Build configuration list for PBXNativeTarget "EntomologyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD58CFF02A26523300154EDF /* Debug */,
+				AD58CFF12A26523300154EDF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AD58CFCE2A26523200154EDF /* Entomology.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AD58CFCF2A26523200154EDF /* Entomology.xcdatamodel */,
+			);
+			currentVersion = AD58CFCF2A26523200154EDF /* Entomology.xcdatamodel */;
+			path = Entomology.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = AD58CFB82A26522F00154EDF /* Project object */;
+}
