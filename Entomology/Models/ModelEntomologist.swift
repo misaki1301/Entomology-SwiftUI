@@ -8,20 +8,15 @@
 import Foundation
 
 struct ModelEntomologist: Codable, ModelEntity {
-	
 	typealias T = ModelEntomologist
 	
 	var name: String?
 	var urlPhoto: String?
 	var geoLocate: String?
 	
-	func changeUrlPhoto(type: String) {
-		
-	}
+	func changeUrlPhoto(type: String) {}
 	
-	func changeGeoLocationPhoto() {
-		
-	}
+	func changeGeoLocationPhoto() {}
 	
 	func toJson() -> String {
 		String(describing: self)
@@ -51,6 +46,4 @@ struct ModelEntomologist: Codable, ModelEntity {
 	func copyWith(_ model: ModelEntomologist) -> ModelEntomologist {
 		return ModelEntomologist(name: model.name ?? self.name, urlPhoto: model.urlPhoto ?? self.urlPhoto, geoLocate: model.geoLocate ?? self.geoLocate)
 	}
-	
-	
 }
