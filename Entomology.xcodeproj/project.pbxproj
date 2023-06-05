@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD517A6A2A2AC12800BDC415 /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD517A692A2AC12800BDC415 /* LocationViewModel.swift */; };
 		AD58CFC42A26522F00154EDF /* EntomologyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD58CFC32A26522F00154EDF /* EntomologyApp.swift */; };
 		AD58CFC62A26522F00154EDF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD58CFC52A26522F00154EDF /* ContentView.swift */; };
 		AD58CFC82A26523200154EDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD58CFC72A26523200154EDF /* Assets.xcassets */; };
@@ -16,6 +17,29 @@
 		AD58CFDA2A26523300154EDF /* EntomologyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD58CFD92A26523300154EDF /* EntomologyTests.swift */; };
 		AD58CFE42A26523300154EDF /* EntomologyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD58CFE32A26523300154EDF /* EntomologyUITests.swift */; };
 		AD58CFE62A26523300154EDF /* EntomologyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD58CFE52A26523300154EDF /* EntomologyUITestsLaunchTests.swift */; };
+		AD58CFFF2A2655CF00154EDF /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD58CFF32A2655CE00154EDF /* Roboto-Regular.ttf */; };
+		AD58D0002A2655CF00154EDF /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD58CFF42A2655CF00154EDF /* Roboto-Thin.ttf */; };
+		AD58D0012A2655CF00154EDF /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD58CFF52A2655CF00154EDF /* Roboto-Italic.ttf */; };
+		AD58D0022A2655CF00154EDF /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD58CFF62A2655CF00154EDF /* Roboto-Bold.ttf */; };
+		AD58D0032A2655CF00154EDF /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD58CFF72A2655CF00154EDF /* Roboto-Light.ttf */; };
+		AD58D0042A2655CF00154EDF /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD58CFF82A2655CF00154EDF /* Roboto-ThinItalic.ttf */; };
+		AD58D0052A2655CF00154EDF /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD58CFF92A2655CF00154EDF /* Roboto-Black.ttf */; };
+		AD58D0062A2655CF00154EDF /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD58CFFA2A2655CF00154EDF /* Roboto-BlackItalic.ttf */; };
+		AD58D0072A2655CF00154EDF /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD58CFFB2A2655CF00154EDF /* Roboto-MediumItalic.ttf */; };
+		AD58D0082A2655CF00154EDF /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD58CFFC2A2655CF00154EDF /* Roboto-Medium.ttf */; };
+		AD58D0092A2655CF00154EDF /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD58CFFD2A2655CF00154EDF /* Roboto-BoldItalic.ttf */; };
+		AD58D00A2A2655CF00154EDF /* Roboto-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD58CFFE2A2655CF00154EDF /* Roboto-LightItalic.ttf */; };
+		AD58D0102A26591500154EDF /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD58D00F2A26591500154EDF /* SplashView.swift */; };
+		AD58D0122A265B3100154EDF /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD58D0112A265B3100154EDF /* View.swift */; };
+		AD58D0152A2665A100154EDF /* MaterialStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD58D0142A2665A100154EDF /* MaterialStyle.swift */; };
+		AD58D0182A26B40C00154EDF /* RegisterUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD58D0172A26B40C00154EDF /* RegisterUserView.swift */; };
+		AD58D01A2A27E40100154EDF /* UserProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD58D0192A27E40100154EDF /* UserProfileImageView.swift */; };
+		AD58D01C2A27F57400154EDF /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD58D01B2A27F57400154EDF /* ImagePicker.swift */; };
+		AD58D0212A28FF8100154EDF /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD58D0202A28FF8100154EDF /* ViewRouter.swift */; };
+		AD58D0242A2972EB00154EDF /* ModelEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD58D0232A2972EB00154EDF /* ModelEntity.swift */; };
+		AD58D0262A29791E00154EDF /* ModelEntomologist.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD58D0252A29791E00154EDF /* ModelEntomologist.swift */; };
+		AD58D0282A29BBC800154EDF /* ModelInsect.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD58D0272A29BBC800154EDF /* ModelInsect.swift */; };
+		AD58D02A2A29BDE300154EDF /* GeoLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD58D0292A29BDE300154EDF /* GeoLocation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AD517A692A2AC12800BDC415 /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
 		AD58CFC02A26522F00154EDF /* Entomology.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Entomology.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD58CFC32A26522F00154EDF /* EntomologyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntomologyApp.swift; sourceTree = "<group>"; };
 		AD58CFC52A26522F00154EDF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,6 +73,30 @@
 		AD58CFDF2A26523300154EDF /* EntomologyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EntomologyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD58CFE32A26523300154EDF /* EntomologyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntomologyUITests.swift; sourceTree = "<group>"; };
 		AD58CFE52A26523300154EDF /* EntomologyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntomologyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		AD58CFF32A2655CE00154EDF /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		AD58CFF42A2655CF00154EDF /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		AD58CFF52A2655CF00154EDF /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
+		AD58CFF62A2655CF00154EDF /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		AD58CFF72A2655CF00154EDF /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
+		AD58CFF82A2655CF00154EDF /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
+		AD58CFF92A2655CF00154EDF /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
+		AD58CFFA2A2655CF00154EDF /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
+		AD58CFFB2A2655CF00154EDF /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
+		AD58CFFC2A2655CF00154EDF /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		AD58CFFD2A2655CF00154EDF /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
+		AD58CFFE2A2655CF00154EDF /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
+		AD58D00F2A26591500154EDF /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		AD58D0112A265B3100154EDF /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		AD58D0142A2665A100154EDF /* MaterialStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialStyle.swift; sourceTree = "<group>"; };
+		AD58D0162A2665E100154EDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		AD58D0172A26B40C00154EDF /* RegisterUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserView.swift; sourceTree = "<group>"; };
+		AD58D0192A27E40100154EDF /* UserProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileImageView.swift; sourceTree = "<group>"; };
+		AD58D01B2A27F57400154EDF /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		AD58D0202A28FF8100154EDF /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
+		AD58D0232A2972EB00154EDF /* ModelEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelEntity.swift; sourceTree = "<group>"; };
+		AD58D0252A29791E00154EDF /* ModelEntomologist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelEntomologist.swift; sourceTree = "<group>"; };
+		AD58D0272A29BBC800154EDF /* ModelInsect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelInsect.swift; sourceTree = "<group>"; };
+		AD58D0292A29BDE300154EDF /* GeoLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoLocation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +124,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD517A682A2AC11800BDC415 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AD517A692A2AC12800BDC415 /* LocationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		AD58CFB72A26522F00154EDF = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +155,13 @@
 		AD58CFC22A26522F00154EDF /* Entomology */ = {
 			isa = PBXGroup;
 			children = (
+				AD517A682A2AC11800BDC415 /* ViewModel */,
+				AD58D0162A2665E100154EDF /* Info.plist */,
+				AD58D00C2A2658B100154EDF /* Models */,
+				AD58D00E2A2658E500154EDF /* Views */,
+				AD58D01D2A28FF4D00154EDF /* Routes */,
+				AD58D00D2A2658DA00154EDF /* Services */,
+				AD58CFF22A26549E00154EDF /* Fonts */,
 				AD58CFC32A26522F00154EDF /* EntomologyApp.swift */,
 				AD58CFC52A26522F00154EDF /* ContentView.swift */,
 				AD58CFC72A26523200154EDF /* Assets.xcassets */,
@@ -133,6 +197,80 @@
 			path = EntomologyUITests;
 			sourceTree = "<group>";
 		};
+		AD58CFF22A26549E00154EDF /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				AD58CFF92A2655CF00154EDF /* Roboto-Black.ttf */,
+				AD58CFFA2A2655CF00154EDF /* Roboto-BlackItalic.ttf */,
+				AD58CFF62A2655CF00154EDF /* Roboto-Bold.ttf */,
+				AD58CFFD2A2655CF00154EDF /* Roboto-BoldItalic.ttf */,
+				AD58CFF52A2655CF00154EDF /* Roboto-Italic.ttf */,
+				AD58CFF72A2655CF00154EDF /* Roboto-Light.ttf */,
+				AD58CFFE2A2655CF00154EDF /* Roboto-LightItalic.ttf */,
+				AD58CFFC2A2655CF00154EDF /* Roboto-Medium.ttf */,
+				AD58CFFB2A2655CF00154EDF /* Roboto-MediumItalic.ttf */,
+				AD58CFF32A2655CE00154EDF /* Roboto-Regular.ttf */,
+				AD58CFF42A2655CF00154EDF /* Roboto-Thin.ttf */,
+				AD58CFF82A2655CF00154EDF /* Roboto-ThinItalic.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		AD58D00C2A2658B100154EDF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AD58D0222A2972D600154EDF /* Interfaces */,
+				AD58D0252A29791E00154EDF /* ModelEntomologist.swift */,
+				AD58D0272A29BBC800154EDF /* ModelInsect.swift */,
+				AD58D0292A29BDE300154EDF /* GeoLocation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AD58D00D2A2658DA00154EDF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AD58D01B2A27F57400154EDF /* ImagePicker.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		AD58D00E2A2658E500154EDF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AD58D0132A26618400154EDF /* Extensions */,
+				AD58D00F2A26591500154EDF /* SplashView.swift */,
+				AD58D0172A26B40C00154EDF /* RegisterUserView.swift */,
+				AD58D0192A27E40100154EDF /* UserProfileImageView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AD58D0132A26618400154EDF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AD58D0112A265B3100154EDF /* View.swift */,
+				AD58D0142A2665A100154EDF /* MaterialStyle.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AD58D01D2A28FF4D00154EDF /* Routes */ = {
+			isa = PBXGroup;
+			children = (
+				AD58D0202A28FF8100154EDF /* ViewRouter.swift */,
+			);
+			path = Routes;
+			sourceTree = "<group>";
+		};
+		AD58D0222A2972D600154EDF /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				AD58D0232A2972EB00154EDF /* ModelEntity.swift */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +281,8 @@
 				AD58CFBC2A26522F00154EDF /* Sources */,
 				AD58CFBD2A26522F00154EDF /* Frameworks */,
 				AD58CFBE2A26522F00154EDF /* Resources */,
+				AD517A6B2A2B20E300BDC415 /* SwiftLint */,
+				ADDAE28D2A2B2262009907FC /* SwiftFormat */,
 			);
 			buildRules = (
 			);
@@ -237,7 +377,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD58D0002A2655CF00154EDF /* Roboto-Thin.ttf in Resources */,
+				AD58CFFF2A2655CF00154EDF /* Roboto-Regular.ttf in Resources */,
+				AD58D00A2A2655CF00154EDF /* Roboto-LightItalic.ttf in Resources */,
+				AD58D0022A2655CF00154EDF /* Roboto-Bold.ttf in Resources */,
+				AD58D0012A2655CF00154EDF /* Roboto-Italic.ttf in Resources */,
+				AD58D0092A2655CF00154EDF /* Roboto-BoldItalic.ttf in Resources */,
+				AD58D0042A2655CF00154EDF /* Roboto-ThinItalic.ttf in Resources */,
+				AD58D0052A2655CF00154EDF /* Roboto-Black.ttf in Resources */,
+				AD58D0032A2655CF00154EDF /* Roboto-Light.ttf in Resources */,
+				AD58D0062A2655CF00154EDF /* Roboto-BlackItalic.ttf in Resources */,
+				AD58D0082A2655CF00154EDF /* Roboto-Medium.ttf in Resources */,
 				AD58CFCB2A26523200154EDF /* Preview Assets.xcassets in Resources */,
+				AD58D0072A2655CF00154EDF /* Roboto-MediumItalic.ttf in Resources */,
 				AD58CFC82A26523200154EDF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,15 +410,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		AD517A6B2A2B20E300BDC415 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		ADDAE28D2A2B2262009907FC /* SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftFormat;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AD58CFBC2A26522F00154EDF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD58D0182A26B40C00154EDF /* RegisterUserView.swift in Sources */,
+				AD58D0122A265B3100154EDF /* View.swift in Sources */,
 				AD58CFD02A26523200154EDF /* Entomology.xcdatamodeld in Sources */,
 				AD58CFCD2A26523200154EDF /* Persistence.swift in Sources */,
+				AD58D0102A26591500154EDF /* SplashView.swift in Sources */,
+				AD58D0282A29BBC800154EDF /* ModelInsect.swift in Sources */,
 				AD58CFC62A26522F00154EDF /* ContentView.swift in Sources */,
+				AD517A6A2A2AC12800BDC415 /* LocationViewModel.swift in Sources */,
+				AD58D0262A29791E00154EDF /* ModelEntomologist.swift in Sources */,
 				AD58CFC42A26522F00154EDF /* EntomologyApp.swift in Sources */,
+				AD58D0212A28FF8100154EDF /* ViewRouter.swift in Sources */,
+				AD58D01C2A27F57400154EDF /* ImagePicker.swift in Sources */,
+				AD58D01A2A27E40100154EDF /* UserProfileImageView.swift in Sources */,
+				AD58D02A2A29BDE300154EDF /* GeoLocation.swift in Sources */,
+				AD58D0242A2972EB00154EDF /* ModelEntity.swift in Sources */,
+				AD58D0152A2665A100154EDF /* MaterialStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,11 +631,13 @@
 				DEVELOPMENT_TEAM = B97JTSGWZ2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Entomology/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -457,11 +662,13 @@
 				DEVELOPMENT_TEAM = B97JTSGWZ2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Entomology/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
