@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22F66" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Entomologist" representedClassName="Entomologist" syncable="YES" codeGenerationType="class"/>
-    <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
-        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+    <entity name="CountRecord" representedClassName="CountRecord" syncable="YES">
+        <attribute name="comment" optional="YES" attributeType="String"/>
+        <attribute name="count" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="geoLocate" optional="YES" attributeType="String"/>
+        <relationship name="entomologist" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Entomologist"/>
+        <relationship name="insect" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Insect"/>
+    </entity>
+    <entity name="Entomologist" representedClassName=".Entomologist" syncable="YES">
+        <attribute name="geoLocate" optional="YES" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="urlPhoto" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+        <relationship name="countRecords" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CountRecord"/>
+    </entity>
+    <entity name="Insect" representedClassName="Insect" syncable="YES">
+        <attribute name="geoLocate" optional="YES" attributeType="String"/>
+        <attribute name="moreInfoUrl" optional="YES" attributeType="String"/>
+        <attribute name="speciesName" optional="YES" attributeType="String"/>
+        <attribute name="urlPhoto" optional="YES" attributeType="Binary"/>
+        <relationship name="countRecords" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CountRecord"/>
     </entity>
 </model>

@@ -25,6 +25,34 @@ struct MaterialTextFieldStyle: TextFieldStyle {
 	// swiftlint:enable identifier_name
 }
 
+struct MaterialFabButtonStyle: ButtonStyle {
+	var color = "background"
+	func makeBody(configuration: Configuration) -> some View {
+		MaterialFabButtonStyleView(color: color, configuration: configuration)
+	}
+}
+
+private extension MaterialFabButtonStyle {
+	struct MaterialFabButtonStyleView: View {
+		var color = "background"
+		@Environment(\.isEnabled) var isEnabled
+		let configuration: MaterialFabButtonStyle.Configuration
+		var body: some View {
+			return configuration.label
+				.font(.custom("Roboto-Medium", size: 14))
+				.padding(.all, 20)
+				.foregroundColor(Color("fab_text_primary"))
+				.background(isEnabled ? Color(color) : Color("button_disabled_background"))
+				.cornerRadius(16)
+				// .shadow(radius: 2, x: 0, y: 2)
+				// make the button a bit more translucent when pressed
+				.opacity(configuration.isPressed ? 0.8 : 1.0)
+				// make the button a bit smaller when pressed
+				.scaleEffect(configuration.isPressed ? 0.98 : 1.0)
+		}
+	}
+}
+
 struct MaterialButtonStyle: ButtonStyle {
 	func makeBody(configuration: Self.Configuration) -> some View {
 		MaterialButtonStyleView(configuration: configuration)
@@ -39,9 +67,10 @@ private extension MaterialButtonStyle {
 			return configuration.label
 				.font(.custom("Roboto-Medium", size: 14))
 				.foregroundColor(Color("font_primary"))
-				.background(isEnabled ? Color("button_background") : Color("button_background_disabled"))
+				.background(isEnabled ? Color("button_background") : Color.clear)
+				.overlay(RoundedRectangle(cornerRadius: 100).stroke(!isEnabled ? Color("textfield_focus_border") : Color.clear, lineWidth: 2))
 				.cornerRadius(100)
-				.shadow(radius: 2, x: 0, y: 2)
+				.shadow(radius: isEnabled ? 2 : 0, x: 0, y: isEnabled ? 2:0)
 				// make the button a bit more translucent when pressed
 				.opacity(configuration.isPressed ? 0.8 : 1.0)
 				// make the button a bit smaller when pressed

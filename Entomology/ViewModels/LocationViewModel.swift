@@ -5,14 +5,15 @@
 //  Created by Paul Pacheco on 2/06/23.
 //
 
-import Foundation
 import CoreLocation
+import Foundation
 import UIKit
 
 class LocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
-	
 	@Published var authorizationStatus: CLAuthorizationStatus
 	@Published var isPermissionActive = false
+	@Published var lastSeenLocation: CLLocation?
+	@Published var currentPlacemark: CLPlacemark?
 	
 	private let locationManager: CLLocationManager
 	
@@ -21,7 +22,7 @@ class LocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
 		authorizationStatus = locationManager.authorizationStatus
 		super.init()
 		
-		isPermissionActive = self.authorizationStatus == .authorizedAlways || self.authorizationStatus == .authorizedWhenInUse
+		isPermissionActive = authorizationStatus == .authorizedAlways || authorizationStatus == .authorizedWhenInUse
 		locationManager.delegate = self
 		locationManager.desiredAccuracy = kCLLocationAccuracyBest
 		locationManager.startUpdatingLocation()
@@ -39,4 +40,18 @@ class LocationViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
 		authorizationStatus = manager.authorizationStatus
 	}
 	
+	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+		lastSeenLocation = locations.first
+		fetchCountryAndCity(for: locations.first)
+	}
+	
+	func fetchCountryAndCity(for location: CLLocation?) {
+		guard let location = location else {
+			return
+		}
+		let geocoder = CLGeocoder()
+		geocoder.reverseGeocodeLocation(location) { placemarks, error in
+			self.currentPlacemark = placemarks?.first
+		}
+	}
 }

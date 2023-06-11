@@ -9,16 +9,18 @@ import SwiftUI
 
 @main
 struct EntomologyApp: App {
-    let persistenceController = PersistenceController.shared
+	let persistenceController = CoreDataProvider.shared
 	@StateObject var viewRouter = ViewRouter()
 	@StateObject var locationViewModel = LocationViewModel()
+	@StateObject var entomologistViewModel = EntomologistViewModel()
 
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
+	var body: some Scene {
+		WindowGroup {
+			ContentView()
 				.environmentObject(viewRouter)
 				.environmentObject(locationViewModel)
-                //.environment(\.managedObjectContext, persistenceController.container.viewContext)
-        }
-    }
+				.environmentObject(entomologistViewModel)
+				.environment(\.managedObjectContext, CoreDataProvider.shared.viewContext)
+		}
+	}
 }

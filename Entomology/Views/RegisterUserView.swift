@@ -8,14 +8,34 @@
 import SwiftUI
 
 struct RegisterUserView: View {
+	@Environment(\.managedObjectContext) private var viewContext
 	@EnvironmentObject var locationViewModel: LocationViewModel
+	@EnvironmentObject var entomologistViewModel: EntomologistViewModel
+	@EnvironmentObject var viewRouter: ViewRouter
 	@State private var isEditing: Bool = false
 	@State private var username: String = ""
-	//@State private var locationPermission: Bool = false
-	@State private var profileImage: UIImage = UIImage(named: "newphoto")!
+	// @State private var locationPermission: Bool = false
+	@State private var profileImage: UIImage = .init(named: "newphoto")!
 	@State private var showChangeImageProfile = false
 	@State private var alertVisible = false
-	
+
+	private func saveEntomologist() {
+		do {
+			let entomologist = Entomologist(context: viewContext)
+			entomologist.geoLocate = "Desconocido"
+			print(locationViewModel.currentPlacemark?.locality)
+			if let currentPlacemark = locationViewModel.currentPlacemark {
+				entomologist.geoLocate = currentPlacemark.locality
+			}
+			entomologist.name = username
+			entomologist.urlPhoto = profileImage.pngData()
+			entomologistViewModel.saveEntomologist(for: entomologist)
+			viewRouter.currentPage = .homePage
+		} catch {
+			print("error saving entomologist: \(error)")
+		}
+	}
+
 	var body: some View {
 		VStack {
 			Spacer()
@@ -31,7 +51,7 @@ struct RegisterUserView: View {
 				}
 			VStack(alignment: .leading) {
 				Text("Nombre").padding(.leading, 34)
-				TextField("Nombre", text: $username, onEditingChanged: {isEditing = $0})
+				TextField("Nombre", text: $username, onEditingChanged: { isEditing = $0 })
 					.textFieldStyle(MaterialTextFieldStyle(isEditing: isEditing))
 			}
 			.padding(.horizontal, 42)
@@ -47,7 +67,7 @@ struct RegisterUserView: View {
 								alertVisible = true
 							}
 						}
-						.onChange(of: locationViewModel.isPermissionActive) { newValue in
+						.onChange(of: locationViewModel.isPermissionActive) { _ in
 							locationViewModel.requestPermission()
 						}
 					VStack(alignment: .leading) {
@@ -64,11 +84,11 @@ struct RegisterUserView: View {
 				.padding(.horizontal, 26)
 			Spacer()
 			HStack(spacing: 110.0) {
-				Button(action:{}) {
+				Button(action: {}) {
 					Text("Omitir").padding(.vertical, 10)
 						.padding(.horizontal, 24)
 				}.buttonStyle(MaterialButtonStyle())
-				Button(action:{}) {
+				Button(action: saveEntomologist) {
 					Text("Guardar").padding(.vertical, 10)
 						.padding(.horizontal, 24)
 				}.buttonStyle(MaterialButtonStyle())
@@ -78,8 +98,7 @@ struct RegisterUserView: View {
 		.alert(isPresented: $alertVisible) {
 			Alert(title: Text("Necesitas activar la geolocalización"), message: Text("Ir a Configuración?"), primaryButton: .default(Text("Configuración"), action: {
 				UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
-			}), secondaryButton: .default(Text("Cancelar"))
-			)
+			}), secondaryButton: .default(Text("Cancelar")))
 		}
 		.backgroundColor(Color("background"))
 		.onTapGesture {
@@ -89,8 +108,9 @@ struct RegisterUserView: View {
 }
 
 struct RegisterUserView_Previews: PreviewProvider {
-    static var previews: some View {
-        RegisterUserView()
+	static var previews: some View {
+		RegisterUserView()
 			.environmentObject(LocationViewModel())
-    }
+			.environmentObject(EntomologistViewModel())
+	}
 }

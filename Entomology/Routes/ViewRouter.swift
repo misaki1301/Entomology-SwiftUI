@@ -9,9 +9,10 @@ import Foundation
 
 class ViewRouter: ObservableObject {
 	@Published var currentPage: Page = .splashScreen
+	@Published var returnToHome = false
 }
 
-enum Page {
+enum Page: String {
 	case splashScreen
 	case signInPage
 	case signUpPage

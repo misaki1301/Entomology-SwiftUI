@@ -10,30 +10,25 @@ import SwiftUI
 struct ContentView: View {
 	@EnvironmentObject var viewRouter: ViewRouter
 
-    var body: some View {
+	var body: some View {
 		ZStack {
 			switch viewRouter.currentPage {
-				case .splashScreen:
-					SplashView()
-				case .signUpPage:
-					RegisterUserView()
-				default:
-					SplashView()
+			case .splashScreen:
+				SplashView()
+			case .signUpPage:
+				RegisterUserView()
+			case .homePage:
+				HomeView()
+			default:
+				SplashView()
 			}
 		}
-    }
+	}
 }
 
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()
-
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
+	static var previews: some View {
 		ContentView()
 			.environmentObject(ViewRouter())
-    }
+	}
 }

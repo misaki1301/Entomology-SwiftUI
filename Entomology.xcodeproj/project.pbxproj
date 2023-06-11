@@ -12,7 +12,7 @@
 		AD58CFC62A26522F00154EDF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD58CFC52A26522F00154EDF /* ContentView.swift */; };
 		AD58CFC82A26523200154EDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD58CFC72A26523200154EDF /* Assets.xcassets */; };
 		AD58CFCB2A26523200154EDF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD58CFCA2A26523200154EDF /* Preview Assets.xcassets */; };
-		AD58CFCD2A26523200154EDF /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD58CFCC2A26523200154EDF /* Persistence.swift */; };
+		AD58CFCD2A26523200154EDF /* CoreDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD58CFCC2A26523200154EDF /* CoreDataProvider.swift */; };
 		AD58CFD02A26523200154EDF /* Entomology.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AD58CFCE2A26523200154EDF /* Entomology.xcdatamodeld */; };
 		AD58CFDA2A26523300154EDF /* EntomologyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD58CFD92A26523300154EDF /* EntomologyTests.swift */; };
 		AD58CFE42A26523300154EDF /* EntomologyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD58CFE32A26523300154EDF /* EntomologyUITests.swift */; };
@@ -37,9 +37,21 @@
 		AD58D01C2A27F57400154EDF /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD58D01B2A27F57400154EDF /* ImagePicker.swift */; };
 		AD58D0212A28FF8100154EDF /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD58D0202A28FF8100154EDF /* ViewRouter.swift */; };
 		AD58D0242A2972EB00154EDF /* ModelEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD58D0232A2972EB00154EDF /* ModelEntity.swift */; };
-		AD58D0262A29791E00154EDF /* ModelEntomologist.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD58D0252A29791E00154EDF /* ModelEntomologist.swift */; };
-		AD58D0282A29BBC800154EDF /* ModelInsect.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD58D0272A29BBC800154EDF /* ModelInsect.swift */; };
+		AD58D0262A29791E00154EDF /* Entomologist.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD58D0252A29791E00154EDF /* Entomologist.swift */; };
+		AD58D0282A29BBC800154EDF /* Insect.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD58D0272A29BBC800154EDF /* Insect.swift */; };
 		AD58D02A2A29BDE300154EDF /* GeoLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD58D0292A29BDE300154EDF /* GeoLocation.swift */; };
+		AD642A862A32742700181622 /* InsectFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD642A852A32742700181622 /* InsectFormView.swift */; };
+		AD642A882A3277BD00181622 /* PhotoSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD642A872A3277BD00181622 /* PhotoSource.swift */; };
+		AD642A8A2A32D9CE00181622 /* CountRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD642A892A32D9CE00181622 /* CountRecord.swift */; };
+		AD642A8C2A330A9A00181622 /* InsectCountRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD642A8B2A330A9A00181622 /* InsectCountRecordView.swift */; };
+		ADB6F0772A2E7AD7009294CF /* CoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB6F0762A2E7AD7009294CF /* CoreDataModel.swift */; };
+		ADB6F0792A2E89F7009294CF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB6F0782A2E89F7009294CF /* HomeView.swift */; };
+		ADB6F0802A2F27D5009294CF /* MaterialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB6F07F2A2F27D5009294CF /* MaterialButton.swift */; };
+		ADB6F0822A2F292D009294CF /* InsectCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB6F0812A2F292D009294CF /* InsectCard.swift */; };
+		ADB6F0842A2F29A6009294CF /* MaterialFabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB6F0832A2F29A6009294CF /* MaterialFabButton.swift */; };
+		ADB6F0862A2F3751009294CF /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB6F0852A2F3751009294CF /* AppData.swift */; };
+		ADD4A4862A300D1B000A3BE5 /* InsectDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD4A4852A300D1B000A3BE5 /* InsectDetailView.swift */; };
+		ADD4A4882A3024C3000A3BE5 /* EntomologistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD4A4872A3024C3000A3BE5 /* EntomologistViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +78,7 @@
 		AD58CFC52A26522F00154EDF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AD58CFC72A26523200154EDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD58CFCA2A26523200154EDF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		AD58CFCC2A26523200154EDF /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		AD58CFCC2A26523200154EDF /* CoreDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataProvider.swift; sourceTree = "<group>"; };
 		AD58CFCF2A26523200154EDF /* Entomology.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Entomology.xcdatamodel; sourceTree = "<group>"; };
 		AD58CFD52A26523300154EDF /* EntomologyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EntomologyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD58CFD92A26523300154EDF /* EntomologyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntomologyTests.swift; sourceTree = "<group>"; };
@@ -94,9 +106,21 @@
 		AD58D01B2A27F57400154EDF /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		AD58D0202A28FF8100154EDF /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		AD58D0232A2972EB00154EDF /* ModelEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelEntity.swift; sourceTree = "<group>"; };
-		AD58D0252A29791E00154EDF /* ModelEntomologist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelEntomologist.swift; sourceTree = "<group>"; };
-		AD58D0272A29BBC800154EDF /* ModelInsect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelInsect.swift; sourceTree = "<group>"; };
+		AD58D0252A29791E00154EDF /* Entomologist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entomologist.swift; sourceTree = "<group>"; };
+		AD58D0272A29BBC800154EDF /* Insect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Insect.swift; sourceTree = "<group>"; };
 		AD58D0292A29BDE300154EDF /* GeoLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoLocation.swift; sourceTree = "<group>"; };
+		AD642A852A32742700181622 /* InsectFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsectFormView.swift; sourceTree = "<group>"; };
+		AD642A872A3277BD00181622 /* PhotoSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSource.swift; sourceTree = "<group>"; };
+		AD642A892A32D9CE00181622 /* CountRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountRecord.swift; sourceTree = "<group>"; };
+		AD642A8B2A330A9A00181622 /* InsectCountRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsectCountRecordView.swift; sourceTree = "<group>"; };
+		ADB6F0762A2E7AD7009294CF /* CoreDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataModel.swift; sourceTree = "<group>"; };
+		ADB6F0782A2E89F7009294CF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		ADB6F07F2A2F27D5009294CF /* MaterialButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialButton.swift; sourceTree = "<group>"; };
+		ADB6F0812A2F292D009294CF /* InsectCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsectCard.swift; sourceTree = "<group>"; };
+		ADB6F0832A2F29A6009294CF /* MaterialFabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialFabButton.swift; sourceTree = "<group>"; };
+		ADB6F0852A2F3751009294CF /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
+		ADD4A4852A300D1B000A3BE5 /* InsectDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsectDetailView.swift; sourceTree = "<group>"; };
+		ADD4A4872A3024C3000A3BE5 /* EntomologistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntomologistViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,12 +148,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AD517A682A2AC11800BDC415 /* ViewModel */ = {
+		AD517A682A2AC11800BDC415 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				AD517A692A2AC12800BDC415 /* LocationViewModel.swift */,
+				ADD4A4872A3024C3000A3BE5 /* EntomologistViewModel.swift */,
 			);
-			path = ViewModel;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		AD58CFB72A26522F00154EDF = {
@@ -155,17 +180,17 @@
 		AD58CFC22A26522F00154EDF /* Entomology */ = {
 			isa = PBXGroup;
 			children = (
-				AD517A682A2AC11800BDC415 /* ViewModel */,
 				AD58D0162A2665E100154EDF /* Info.plist */,
 				AD58D00C2A2658B100154EDF /* Models */,
+				AD517A682A2AC11800BDC415 /* ViewModels */,
 				AD58D00E2A2658E500154EDF /* Views */,
+				ADCEE75E2A2FC43A00152FB5 /* Providers */,
 				AD58D01D2A28FF4D00154EDF /* Routes */,
 				AD58D00D2A2658DA00154EDF /* Services */,
 				AD58CFF22A26549E00154EDF /* Fonts */,
 				AD58CFC32A26522F00154EDF /* EntomologyApp.swift */,
 				AD58CFC52A26522F00154EDF /* ContentView.swift */,
 				AD58CFC72A26523200154EDF /* Assets.xcassets */,
-				AD58CFCC2A26523200154EDF /* Persistence.swift */,
 				AD58CFCE2A26523200154EDF /* Entomology.xcdatamodeld */,
 				AD58CFC92A26523200154EDF /* Preview Content */,
 			);
@@ -219,10 +244,14 @@
 		AD58D00C2A2658B100154EDF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				ADB6F0762A2E7AD7009294CF /* CoreDataModel.swift */,
 				AD58D0222A2972D600154EDF /* Interfaces */,
-				AD58D0252A29791E00154EDF /* ModelEntomologist.swift */,
-				AD58D0272A29BBC800154EDF /* ModelInsect.swift */,
+				AD58D0252A29791E00154EDF /* Entomologist.swift */,
+				AD58D0272A29BBC800154EDF /* Insect.swift */,
 				AD58D0292A29BDE300154EDF /* GeoLocation.swift */,
+				ADB6F0852A2F3751009294CF /* AppData.swift */,
+				AD642A872A3277BD00181622 /* PhotoSource.swift */,
+				AD642A892A32D9CE00181622 /* CountRecord.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -239,9 +268,14 @@
 			isa = PBXGroup;
 			children = (
 				AD58D0132A26618400154EDF /* Extensions */,
+				ADB6F07A2A2F278B009294CF /* Components */,
 				AD58D00F2A26591500154EDF /* SplashView.swift */,
 				AD58D0172A26B40C00154EDF /* RegisterUserView.swift */,
 				AD58D0192A27E40100154EDF /* UserProfileImageView.swift */,
+				ADB6F0782A2E89F7009294CF /* HomeView.swift */,
+				ADD4A4852A300D1B000A3BE5 /* InsectDetailView.swift */,
+				AD642A852A32742700181622 /* InsectFormView.swift */,
+				AD642A8B2A330A9A00181622 /* InsectCountRecordView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -271,6 +305,24 @@
 			path = Interfaces;
 			sourceTree = "<group>";
 		};
+		ADB6F07A2A2F278B009294CF /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				ADB6F07F2A2F27D5009294CF /* MaterialButton.swift */,
+				ADB6F0812A2F292D009294CF /* InsectCard.swift */,
+				ADB6F0832A2F29A6009294CF /* MaterialFabButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		ADCEE75E2A2FC43A00152FB5 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				AD58CFCC2A26523200154EDF /* CoreDataProvider.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -282,7 +334,6 @@
 				AD58CFBD2A26522F00154EDF /* Frameworks */,
 				AD58CFBE2A26522F00154EDF /* Resources */,
 				AD517A6B2A2B20E300BDC415 /* SwiftLint */,
-				ADDAE28D2A2B2262009907FC /* SwiftFormat */,
 			);
 			buildRules = (
 			);
@@ -429,24 +480,6 @@
 			shellPath = /bin/sh;
 			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
-		ADDAE28D2A2B2262009907FC /* SwiftFormat */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftFormat;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -455,21 +488,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD58D0182A26B40C00154EDF /* RegisterUserView.swift in Sources */,
+				ADB6F0862A2F3751009294CF /* AppData.swift in Sources */,
+				AD642A862A32742700181622 /* InsectFormView.swift in Sources */,
 				AD58D0122A265B3100154EDF /* View.swift in Sources */,
+				ADB6F0822A2F292D009294CF /* InsectCard.swift in Sources */,
+				ADD4A4882A3024C3000A3BE5 /* EntomologistViewModel.swift in Sources */,
+				AD642A8A2A32D9CE00181622 /* CountRecord.swift in Sources */,
 				AD58CFD02A26523200154EDF /* Entomology.xcdatamodeld in Sources */,
-				AD58CFCD2A26523200154EDF /* Persistence.swift in Sources */,
+				AD58CFCD2A26523200154EDF /* CoreDataProvider.swift in Sources */,
 				AD58D0102A26591500154EDF /* SplashView.swift in Sources */,
-				AD58D0282A29BBC800154EDF /* ModelInsect.swift in Sources */,
+				AD58D0282A29BBC800154EDF /* Insect.swift in Sources */,
 				AD58CFC62A26522F00154EDF /* ContentView.swift in Sources */,
 				AD517A6A2A2AC12800BDC415 /* LocationViewModel.swift in Sources */,
-				AD58D0262A29791E00154EDF /* ModelEntomologist.swift in Sources */,
+				AD58D0262A29791E00154EDF /* Entomologist.swift in Sources */,
+				AD642A882A3277BD00181622 /* PhotoSource.swift in Sources */,
+				AD642A8C2A330A9A00181622 /* InsectCountRecordView.swift in Sources */,
 				AD58CFC42A26522F00154EDF /* EntomologyApp.swift in Sources */,
 				AD58D0212A28FF8100154EDF /* ViewRouter.swift in Sources */,
+				ADD4A4862A300D1B000A3BE5 /* InsectDetailView.swift in Sources */,
 				AD58D01C2A27F57400154EDF /* ImagePicker.swift in Sources */,
+				ADB6F0772A2E7AD7009294CF /* CoreDataModel.swift in Sources */,
+				ADB6F0842A2F29A6009294CF /* MaterialFabButton.swift in Sources */,
+				ADB6F0802A2F27D5009294CF /* MaterialButton.swift in Sources */,
 				AD58D01A2A27E40100154EDF /* UserProfileImageView.swift in Sources */,
 				AD58D02A2A29BDE300154EDF /* GeoLocation.swift in Sources */,
 				AD58D0242A2972EB00154EDF /* ModelEntity.swift in Sources */,
 				AD58D0152A2665A100154EDF /* MaterialStyle.swift in Sources */,
+				ADB6F0792A2E89F7009294CF /* HomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
