@@ -64,7 +64,7 @@ struct InsectDetailCard: View {
 					.resizable()
 					.scaledToFit()
 			}
-			.frame(width: .infinity, height: 80)
+			.frame(height: 80)
 			.listRowSeparator(.hidden)
 			.listRowBackground(Color("background"))
 			.listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 16, trailing: 0))
