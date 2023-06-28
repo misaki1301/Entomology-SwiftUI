@@ -32,4 +32,6 @@ struct Storage<T> {
 struct AppData {
 	@Storage(key: "default_user_id", defaultValue: "")
 	static var defaultUserId: String
+	@Storage(key: "default_test_user_id", defaultValue: "")
+	static var defaultTestUserId: String
 }

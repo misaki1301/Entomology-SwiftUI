@@ -12,7 +12,7 @@ struct SplashView: View {
 	@Environment(\.managedObjectContext) private var viewContext
 	@EnvironmentObject var viewRouter: ViewRouter
 	@EnvironmentObject var entomolgistViewModel: EntomologistViewModel
-
+	
 	var body: some View {
 		VStack {
 			Spacer()
@@ -25,11 +25,11 @@ struct SplashView: View {
 				entomolgistViewModel.getUser()
 			}
 	}
-
+	
 	private func goToSignUp() {
 		viewRouter.currentPage = .signUpPage
 	}
-
+	
 	private func goToSignIn() {
 		viewRouter.currentPage = .homePage
 	}
@@ -40,6 +40,6 @@ struct SplashView_Previews: PreviewProvider {
 		SplashView()
 			.environmentObject(ViewRouter())
 			.environmentObject(EntomologistViewModel())
-			.environment(\.managedObjectContext, CoreDataProvider.preview.persistentContainer.viewContext)
+			.environment(\.managedObjectContext, CoreDataProvider.shared.persistentContainer.viewContext)
 	}
 }

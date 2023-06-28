@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MaterialButton: View {
+	var id = ""
 	var text: String
 	var action: () -> Void
 	var body: some View {
@@ -15,12 +16,17 @@ struct MaterialButton: View {
 			Text(text)
 				.padding(.vertical, 10)
 				.padding(.horizontal, 24)
-		}.buttonStyle(MaterialButtonStyle())
+		}
+		.buttonStyle(MaterialButtonStyle())
+		.accessibilityIdentifier(id)
 	}
 }
 
 struct MaterialButton_Previews: PreviewProvider {
     static var previews: some View {
-        MaterialButton(text: "Registro", action: {})
+		return MaterialButton(
+			text: "Registro",
+			action: {print("hello")}
+		)
     }
 }

@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct InsectFormView: View {
+	
 	@EnvironmentObject var viewRouter: ViewRouter
 	@State private var showOptions = false
 	@State private var image = UIImage(named: "ant")!
-	@State private var name = ""
+	@State private var name = "hormiga"
 	@State private var url = ""
 	@State private var isEditingName = false
 	@State private var isEditingUrl = false
@@ -31,12 +32,13 @@ struct InsectFormView: View {
 					.textFieldStyle(MaterialTextFieldStyle(isEditing: isEditingUrl))
 			}
 			Spacer()
-			NavigationLink(destination: InsectCountRecordView(), isActive: $goToNext, label: {
-				MaterialButton(text: "Seleccionar", action: {goToNext.toggle()})
+			NavigationLink(destination: InsectCountRecordView(name: name, image: image, url: url), isActive: $goToNext, label: {
+				MaterialButton(id: "select_insect_button", text: "Seleccionar", action: {goToNext.toggle()})
 			})
 				.isDetailLink(false)
 			Spacer()
 		}
+		.accessibilityIdentifier("InsectFormView")
 		.padding(42)
 		.backgroundColor(Color("background"))
     }
@@ -44,7 +46,10 @@ struct InsectFormView: View {
 
 struct InsectFormView_Previews: PreviewProvider {
     static var previews: some View {
-        InsectFormView()
-			.environmentObject(ViewRouter())
+		return
+		NavigationView() {
+			InsectFormView()
+				.environmentObject(ViewRouter())
+		}
     }
 }

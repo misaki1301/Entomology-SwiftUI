@@ -8,11 +8,15 @@
 import SwiftUI
 
 struct InsectCountRecordView: View {
+	@Environment(\.managedObjectContext) private var viewContext
 	@EnvironmentObject var viewRouter: ViewRouter
+	@EnvironmentObject var entomologistViewModel: EntomologistViewModel
+	@State var name = "Especie"
+	@State var image = UIImage(named: "ant")!
 	@State var count = 0
+	@State var url = ""
 	@State var comment = ""
 	@State private var isEditing = false
-	@State var image = UIImage(named: "ant")!
 	var body: some View {
 		VStack {
 			VStack {
@@ -21,6 +25,7 @@ struct InsectCountRecordView: View {
 					Text("\(String(format: "%02d", count))")
 						.font(.custom("Roboto-Regular", size: 57))
 						.padding(7)
+						.accessibilityIdentifier("counter_text")
 				}.background(Color("counter_background"))
 					.cornerRadius(8)
 				HStack(spacing: 16) {
@@ -28,12 +33,14 @@ struct InsectCountRecordView: View {
 						.resizable()
 						.scaledToFit()
 					// .frame(width: 45, height: 45)
-					Text("Especie")
+					Text("\(name)")
 						.font(.custom("Roboto-Regular", size: 16))
 						.lineLimit(1)
 					HStack(spacing: 48) {
 						MaterialFabButton(action: { if count >= 1 { count -= 1 }}, icon: "minus", color: "fab_minus_background")
+							.accessibilityIdentifier("fab_minus")
 						MaterialFabButton(action: { count += 1 }, icon: "plus")
+							.accessibilityIdentifier("fab_plus")
 					}.padding(.trailing, 16)
 				}
 				.frame(height: 80)
@@ -47,7 +54,7 @@ struct InsectCountRecordView: View {
 							.frame(height: 184)
 							.padding(.horizontal, 18)
 							.padding(.bottom, 46)
-						MaterialButton(text: "Guardar", action: { viewRouter.returnToHome = false })
+						MaterialButton(text: "Guardar", action: saveToEntomologist)
 					}
 					// Spacer()
 				} else {
@@ -60,7 +67,25 @@ struct InsectCountRecordView: View {
 		.backgroundColor(Color("background"))
 	}
 	private func saveToEntomologist() {
-		
+		do {
+			let insect1 = Insect(context: viewContext)
+			insect1.geoLocate = "Desconocido"
+			insect1.moreInfoUrl = url
+			insect1.speciesName = name
+			insect1.localePhoto = image.pngData()
+			//try viewContext.save()
+			let newRecord = CountRecord(context: viewContext)
+			newRecord.comment = comment
+			newRecord.count = count
+			newRecord.entomologist = entomologistViewModel.currentEntomologist
+			newRecord.geoLocate = "Desconocido"
+			newRecord.insect = insect1
+			try viewContext.save()
+			entomologistViewModel.getUser()
+			viewRouter.returnToHome = false
+		} catch let error as NSError {
+			print("Save error: \(error), \(error.userInfo)")
+		}
 	}
 }
 
@@ -68,5 +93,7 @@ struct InsectCountRecordView_Previews: PreviewProvider {
 	static var previews: some View {
 		InsectCountRecordView()
 			.environmentObject(ViewRouter())
+			.environmentObject(EntomologistViewModel())
+			.environment(\.managedObjectContext, CoreDataProvider.preview.persistentContainer.viewContext)
 	}
 }

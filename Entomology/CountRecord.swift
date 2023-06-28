@@ -8,7 +8,6 @@
 import Foundation
 import CoreData
 
-@objc(CountRecord)
 class CountRecord: NSManagedObject {}
 
 extension CountRecord {
@@ -16,20 +15,16 @@ extension CountRecord {
 	@NSManaged var comment: String
 	@NSManaged var geoLocate: String
 	@NSManaged public var insect: Insect?
-	@NSManaged public var entomolgist: Entomologist?
+	@NSManaged public var entomologist: Entomologist?
 	@nonobjc public class func fetchRequest() -> NSFetchRequest<CountRecord> {
 		return NSFetchRequest<CountRecord>(entityName: "CountRecord")
 	}
 }
-//extension Insect: Model {
-//	static func getByEntomologist(for entomologist: Entomologist) -> NSFetchRequest<Insect> {
-//		let request = Insect.fetchRequest()
-//		request.sortDescriptors = []
-//		request.predicate = NSPredicate(
-//	}
-//}
+
+extension CountRecord: Identifiable {}
+
 extension CountRecord: Model {
-	static func getByEntomologist(for entomologist: Entomologist) -> NSFetchRequest<CountRecord> {
+	static func getByEntomologist() -> NSFetchRequest<CountRecord> {
 		let request = CountRecord.fetchRequest()
 		request.sortDescriptors = []
 		request.predicate = NSPredicate(format: "entomologist == %@", entomologist)

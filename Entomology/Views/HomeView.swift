@@ -9,8 +9,13 @@ import MapKit
 import SwiftUI
 
 struct HomeView: View {
+	@Environment(\.managedObjectContext) private var viewContext
 	@EnvironmentObject var entomologistViewModel: EntomologistViewModel
 	@EnvironmentObject var viewRouter: ViewRouter
+	
+	@FetchRequest(fetchRequest: CountRecord.getByEntomologist())
+	private var countRecordsResults: FetchedResults<CountRecord>
+	
 	@State private var region = MKCoordinateRegion(
 		center: CLLocationCoordinate2D(
 			latitude: 35.30487705019497,
@@ -21,70 +26,100 @@ struct HomeView: View {
 			longitudeDelta: 0.02
 		)
 	)
+	@State var showRecords: Bool = true
+
+	init() {
+//		#if DEBUG
+//
+//		if UITestingHelper.isUITesting {
+//			// custom values for viewModel
+//			_entomologistViewModel = EnvironmentObject()
+//		} //else {
+//			_entomologistViewModel = EnvironmentObject()
+//		//}
+//
+//		#else
+//		_entomologistViewModel = EnvironmentObject()
+//		#endif
+		//_countRecordsResults = FetchRequest(fetchRequest: CountRecord.getByEntomologist(for: entomologistViewModel.currentEntomologist!))
+	}
+
 	var body: some View {
 		let current = entomologistViewModel.currentEntomologist
 		NavigationView {
 			VStack(spacing: 0) {
 				VStack(spacing: 0) {
-					HStack {
-						if let image = current?.urlPhoto {
-							Image(uiImage: UIImage(data: image)!)
-								.resizable()
-								.clipShape(Circle())
-								.frame(width: 65, height: 65)
-						} else {
-							Image("newphoto")
-								.resizable()
-								.clipShape(Circle())
-								.frame(width: 65, height: 65)
-						}
-						Spacer()
-					}.padding(.bottom, 24)
-					HStack(spacing: 16) {
-						Text("Nuevo conteo")
-						Spacer()
-						NavigationLink(destination: InsectFormView(), isActive: $viewRouter.returnToHome) {
-							Image(systemName: "plus")
-						}.buttonStyle(MaterialFabButtonStyle())
-					}
-					.padding(.horizontal, 16.0)
-					.frame(maxWidth: .infinity, maxHeight: 80)
-					.background(Color("bar_background"))
-					.padding(.bottom, 16)
-					//Text("\(current?.countRecords?.count ?? 0)")
-					VStack {
-						List {
-							ZStack {
-								NavigationLink(destination: InsectDetailView()) {
-									EmptyView()
-								}.opacity(0)
-								InsectCard(name: "Hormiga", count: 3)
+					//Image Profile
+							HStack {
+								if let image = current?.urlPhoto {
+									Image(uiImage: UIImage(data: image)!)
+										.resizable()
+										.clipShape(Circle())
+										.frame(width: 65, height: 65)
+										.accessibilityIdentifier("profileImage")
+								} else {
+									Image("newphoto")
+										.resizable()
+										.clipShape(Circle())
+										.frame(width: 65, height: 65)
+										.accessibilityIdentifier("profileImagePlaceholder")
+								}
+								Spacer()
+							}.padding(.bottom, 24)
+					//Record Section
+					if showRecords {
+						VStack {
+							HStack(spacing: 16) {
+								Text("Nuevo conteo")
+									.accessibilityIdentifier("new_count_label")
+								Spacer()
+								NavigationLink(destination: InsectFormView(), isActive: $viewRouter.returnToHome) {
+									Image(systemName: "plus")
+								}
+								.buttonStyle(MaterialFabButtonStyle())
+								.accessibilityIdentifier("new_count_record_button")
 							}
-							.listRowBackground(Color.clear)
-							.listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+							.padding(.horizontal, 16.0)
+							.frame(maxWidth: .infinity, maxHeight: 80)
+							.background(Color("bar_background"))
 							.padding(.bottom, 16)
-							ZStack {
-								NavigationLink(destination: InsectDetailView()) {
-									EmptyView()
-								}.opacity(0)
-								InsectCard(name: "Hormiga", count: 3)
+							VStack {
+								List(current?.countRecords?.toArray() ?? [CountRecord]()) { item in
+									CardCountRecord(
+										name: item.insect?.speciesName ?? "",
+										count: item.count, location: item.geoLocate,
+										localeImage: item.insect?.localePhoto,
+										imageUrl: item.insect?.urlPhoto ?? "",
+										insect: item)
+									.listRowSeparator(.hidden)
+									.accessibilityIdentifier("item_list_\(item.id)")
+								}
+								.accessibilityIdentifier("list_home")
+								.listRowBackground(Color.red)
+								.listStyle(.plain)
 							}
-							.listRowBackground(Color.clear)
-							.listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+							.accessibilityIdentifier("list_holder")
+							.padding(.bottom, 16)
 						}
-						.listRowBackground(Color.red)
-						.listStyle(.plain)
-						.listRowSeparator(.hidden)
-						// .listRowInsets()
-
-					}.padding(.bottom, 16)
+					} else {
+						VStack {
+							Text("Show GG")
+							Spacer()
+						}
+					}
 					HStack {
-						MaterialButton(text: "Informes", action: {})
+						MaterialButton(text: "Informes", action: {showRecords.toggle()})
+							.disabled(!showRecords)
 						Spacer()
-						MaterialButton(text: "Registros", action: {})
+						MaterialButton(text: "Registros", action: {showRecords.toggle()})
+							.disabled(showRecords)
 					}
 				}.padding(.horizontal, 26)
 			}.backgroundColor(Color("background"))
+		}
+		.onAppear {
+			print("Appear HomeView")
+			entomologistViewModel.getUser()
 		}
 	}
 }
@@ -94,5 +129,6 @@ struct HomeView_Previews: PreviewProvider {
 		HomeView()
 			.environmentObject(EntomologistViewModel())
 			.environmentObject(ViewRouter())
+			.environment(\.managedObjectContext, CoreDataProvider.preview.persistentContainer.viewContext)
 	}
 }

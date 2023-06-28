@@ -7,7 +7,6 @@
 import CoreData
 import Foundation
 
-@objc(Insect)
 class Insect: NSManagedObject {
 	func changePhotoUrl(photo: String?) {}
 
@@ -19,6 +18,7 @@ class Insect: NSManagedObject {
 extension Insect {
 	@NSManaged var speciesName: String?
 	@NSManaged var urlPhoto: String?
+	@NSManaged var localePhoto: Data?
 	@NSManaged var geoLocate: String?
 	@NSManaged var moreInfoUrl: String?
 	@NSManaged var countRecords: NSSet?
@@ -29,10 +29,10 @@ extension Insect {
 
 extension Insect: Identifiable {}
 
-//extension Insect: Model {
-//	static func getByEntomologist(for entomologist: Entomologist) -> NSFetchRequest<Insect> {
-//		let request = Insect.fetchRequest()
-//		request.sortDescriptors = []
-//		request.predicate = NSPredicate(
-//	}
-//}
+extension Insect: Model {
+	static func getList() -> NSFetchRequest<Insect> {
+		let request = Insect.fetchRequest()
+		request.sortDescriptors = []
+		return request
+	}
+}

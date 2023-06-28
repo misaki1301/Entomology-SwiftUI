@@ -8,7 +8,7 @@
 import CoreData
 import Foundation
 
-@objc(Entomologist)
+//@objc(Entomologist)
 public class Entomologist: NSManagedObject {
 	func changeUrlPhoto(type: String) {}
 
@@ -32,6 +32,12 @@ extension Entomologist: Model {
 		let request: NSFetchRequest<Entomologist> = Entomologist.fetchRequest()
 		request.sortDescriptors = []
 		request.predicate = NSPredicate(format: "SELF = %@", objectId)
+		return request
+	}
+	static func getByName(for name: String) -> NSFetchRequest<Entomologist> {
+		let request = Entomologist.fetchRequest()
+		request.sortDescriptors = []
+		request.predicate = NSPredicate(format: "name == %@", name)
 		return request
 	}
 	//static func AddCountRecordToEntomology(for entomologist: Entomologist) -> NSFe

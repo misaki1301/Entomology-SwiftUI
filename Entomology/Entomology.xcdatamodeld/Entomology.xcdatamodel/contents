@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22F66" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="CountRecord" representedClassName="CountRecord" syncable="YES">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22F82" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CountRecord" representedClassName=".CountRecord" syncable="YES">
         <attribute name="comment" optional="YES" attributeType="String"/>
         <attribute name="count" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="geoLocate" optional="YES" attributeType="String"/>
-        <relationship name="entomologist" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Entomologist"/>
-        <relationship name="insect" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Insect"/>
+        <relationship name="entomologist" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Entomologist" inverseName="countRecords" inverseEntity="Entomologist"/>
+        <relationship name="insect" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Insect" inverseName="countRecords" inverseEntity="Insect"/>
     </entity>
     <entity name="Entomologist" representedClassName=".Entomologist" syncable="YES">
         <attribute name="geoLocate" optional="YES" attributeType="String"/>
         <attribute name="name" attributeType="String"/>
         <attribute name="urlPhoto" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
-        <relationship name="countRecords" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CountRecord"/>
+        <relationship name="countRecords" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CountRecord" inverseName="entomologist" inverseEntity="CountRecord"/>
     </entity>
-    <entity name="Insect" representedClassName="Insect" syncable="YES">
+    <entity name="GeoLocate" representedClassName="GeoLocate" syncable="YES" codeGenerationType="class"/>
+    <entity name="Insect" representedClassName=".Insect" syncable="YES">
         <attribute name="geoLocate" optional="YES" attributeType="String"/>
+        <attribute name="localePhoto" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
         <attribute name="moreInfoUrl" optional="YES" attributeType="String"/>
         <attribute name="speciesName" optional="YES" attributeType="String"/>
-        <attribute name="urlPhoto" optional="YES" attributeType="Binary"/>
-        <relationship name="countRecords" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CountRecord"/>
+        <attribute name="urlPhoto" optional="YES" attributeType="String"/>
+        <relationship name="countRecords" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CountRecord" inverseName="insect" inverseEntity="CountRecord"/>
     </entity>
 </model>

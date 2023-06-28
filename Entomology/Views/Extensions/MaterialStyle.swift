@@ -70,7 +70,7 @@ private extension MaterialButtonStyle {
 				.background(isEnabled ? Color("button_background") : Color.clear)
 				.overlay(RoundedRectangle(cornerRadius: 100).stroke(!isEnabled ? Color("textfield_focus_border") : Color.clear, lineWidth: 2))
 				.cornerRadius(100)
-				.shadow(radius: isEnabled ? 2 : 0, x: 0, y: isEnabled ? 2:0)
+				.shadow(radius: isEnabled ? 2 : 0, x: 0, y: isEnabled ? 2 : 0)
 				// make the button a bit more translucent when pressed
 				.opacity(configuration.isPressed ? 0.8 : 1.0)
 				// make the button a bit smaller when pressed
