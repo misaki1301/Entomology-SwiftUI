@@ -40,7 +40,7 @@ struct InsectDetailView_Previews: PreviewProvider {
 		let record = CountRecord(context: CoreDataProvider.preview.viewContext)
 		record.comment = "Este es un ejemplo de comentario para preview"
 		record.count = 5
-		record.geoLocate = "Narnia"
+		record.location = "Narnia"
 		let insect = Insect(context: CoreDataProvider.preview.viewContext)
 		insect.speciesName = "Abeja"
 		insect.urlPhoto = "https://static.wikia.nocookie.net/agustin-sepulveda-fanon/images/7/7b/Abeja.png/revision/latest/thumbnail/width/360/height/360?cb=20180620011627&path-prefix=es"

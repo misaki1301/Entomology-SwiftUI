@@ -46,7 +46,6 @@ struct InsectFormView: View {
 
 struct InsectFormView_Previews: PreviewProvider {
     static var previews: some View {
-		return
 		NavigationView() {
 			InsectFormView()
 				.environmentObject(ViewRouter())

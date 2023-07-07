@@ -26,8 +26,10 @@ struct InsectDetailCard: View {
 				VStack(alignment: .leading, spacing: 4) {
 					Text("\(name)")
 						.font(.custom("Roboto-Medium", size: 16))
+						.foregroundColor(Color("font_label_primary"))
 					Text("Ciudad 00/00/0000")
 						.font(.custom("Roboto-Regular", size: 14))
+						.foregroundColor(Color("font_label_primary"))
 				}.frame(maxWidth: .infinity, alignment: .leading)
 				Spacer()
 				if let image {
@@ -38,12 +40,14 @@ struct InsectDetailCard: View {
 					if let url = URL(string: imageUrl) {
 						AsyncImage(url: url) { image in
 							image.resizable()
+								.scaledToFit()
 							
 						} placeholder: {
 							ProgressView()
 						}
 					} else {
 						Image("ant")
+							.scaledToFit()
 					}
 				}
 			}
@@ -55,8 +59,10 @@ struct InsectDetailCard: View {
 				.frame(height: 204)
 			Text("El comentario que se realizara para el conteo")
 				.font(.custom("Roboto-Regular", size: 16))
+				.foregroundColor(Color("font_label_primary"))
 				.padding(16)
 			Text("Url: \(url)")
+				.foregroundColor(Color("font_label_primary"))
 				.padding(16)
 			HStack {
 				Spacer()

@@ -27,15 +27,17 @@ class MockDataSource {
 		let count1 = CountRecord(context: context)
 		count1.count = 20
 		count1.comment = "wow, such amount of insects I found yesterday"
+		count1.createdAt = Date()
 		count1.entomologist = entity
-		count1.geoLocate = "Lima, Peru"
+		count1.location = "Lima, Peru"
 		count1.insect = dataInsects[0]
 
 		let count2 = CountRecord(context: context)
 		count2.count = 3
 		count2.comment = "wow, such amount of insects I found yesterday"
 		count2.entomologist = entity
-		count2.geoLocate = "Lima, Peru"
+		count2.createdAt = Date()
+		count2.location = "Lima, Peru"
 		count2.insect = dataInsects[1]
 		try context.save()
 

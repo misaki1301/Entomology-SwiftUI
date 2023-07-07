@@ -13,6 +13,6 @@ struct CountRecordModel {
 	var geoLocate: String
 	var createdAt: Date
 	var updatedAt: Date?
-	var insect: InsectModel
+	var insect: Insect
 	var entomologist: EntomologistModel
 }

@@ -17,6 +17,7 @@ struct SplashView: View {
 		VStack {
 			Spacer()
 			Image(systemName: "swift")
+				.foregroundColor(Color("font_label_primary"))
 			Image("entomology_logo")
 			Spacer()
 			Spacer()

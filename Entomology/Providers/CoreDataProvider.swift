@@ -27,16 +27,12 @@ class CoreDataProvider {
 			try? mock.createInsects()
 			let req = Insect.getList()
 			let dataInsects = try viewContext.fetch(req)
-			print(dataInsects.count)
 			// create user
 			try? mock.createUser()
 			// create bugs
 			try viewContext.save()
-			
 			let request = Entomologist.getByName(for: "John")
 			let data = try viewContext.fetch(request)
-			print("usuarios")
-			print(data.first)
 		} catch {
 			let nsError = error as NSError
 			fatalError("Unresolved error \(nsError), \(nsError.userInfo)")

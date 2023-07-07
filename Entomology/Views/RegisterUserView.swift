@@ -41,6 +41,7 @@ struct RegisterUserView: View {
 			Spacer()
 			Image(uiImage: profileImage)
 				.resizable()
+				.scaledToFit()
 				.clipShape(Circle())
 				.frame(width: 120, height: 120)
 				.onTapGesture {
@@ -50,7 +51,9 @@ struct RegisterUserView: View {
 					UserProfileImageView(imageProfile: $profileImage)
 				}
 			VStack(alignment: .leading) {
-				Text("Nombre").padding(.leading, 34)
+				Text("Nombre")
+					.padding(.leading, 34)
+					.foregroundColor(Color("font_label_primary"))
 				TextField("Nombre", text: $username, onEditingChanged: { isEditing = $0 })
 					.textFieldStyle(MaterialTextFieldStyle(isEditing: isEditing))
 			}
@@ -60,15 +63,23 @@ struct RegisterUserView: View {
 				HStack {
 					Toggle("Location", isOn: $locationViewModel.isPermissionActive)
 						.labelsHidden()
+						.disabled(locationViewModel.authorizationStatus != .authorizedAlways || locationViewModel.authorizationStatus != .authorizedWhenInUse)
 						.onTapGesture {
-							locationViewModel.isPermissionActive.toggle()
+							//locationViewModel.isPermissionActive.toggle()
+							locationViewModel.requestPermission()
 							print("LOCATION \(locationViewModel.isPermissionActive)")
 							if locationViewModel.authorizationStatus == .denied || locationViewModel.authorizationStatus == .restricted {
 								alertVisible = true
 							}
+							locationViewModel.updateLocationEnabled()
 						}
-						.onChange(of: locationViewModel.isPermissionActive) { _ in
-							locationViewModel.requestPermission()
+						.onChange(of: locationViewModel.isPermissionActive) { newValue in
+							if newValue {
+								locationViewModel.requestPermission()
+							} else {
+								locationViewModel.updateLocationEnabled()
+							}
+							
 						}
 					VStack(alignment: .leading) {
 						Text("Compartenos tu ubicacion")
@@ -85,11 +96,13 @@ struct RegisterUserView: View {
 			Spacer()
 			HStack(spacing: 110.0) {
 				Button(action: {}) {
-					Text("Omitir").padding(.vertical, 10)
+					Text("Omitir")
+						.padding(.vertical, 10)
 						.padding(.horizontal, 24)
 				}.buttonStyle(MaterialButtonStyle())
 				Button(action: saveEntomologist) {
-					Text("Guardar").padding(.vertical, 10)
+					Text("Guardar")
+						.padding(.vertical, 10)
 						.padding(.horizontal, 24)
 				}.buttonStyle(MaterialButtonStyle())
 			}
@@ -100,6 +113,12 @@ struct RegisterUserView: View {
 				UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
 			}), secondaryButton: .default(Text("Cancelar")))
 		}
+		.onAppear {
+			locationViewModel.updateAuthorizationStatus()
+		}
+		.onReceive(NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)) { _ in
+					locationViewModel.updateLocationEnabled()
+				}
 		.backgroundColor(Color("background"))
 		.onTapGesture {
 			hideKeyboard()

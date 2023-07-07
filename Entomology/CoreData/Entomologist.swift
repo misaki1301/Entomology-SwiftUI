@@ -8,33 +8,33 @@
 import CoreData
 import Foundation
 
-public class EntomologistEntity: NSManagedObject {
+public class Entomologist: NSManagedObject {
 	func changeUrlPhoto(type: String) {}
 
 	func changeGeoLocationPhoto() {}
 }
 
-public extension EntomologistEntity {
+public extension Entomologist {
 	@NSManaged var name: String?
 	@NSManaged var urlPhoto: Data?
 	@NSManaged var geoLocate: String?
 	@NSManaged var countRecords: NSSet?
-	@nonobjc class func fetchRequest() -> NSFetchRequest<EntomologistEntity> {
-		return NSFetchRequest<EntomologistEntity>(entityName: "Entomologist")
+	@nonobjc class func fetchRequest() -> NSFetchRequest<Entomologist> {
+		return NSFetchRequest<Entomologist>(entityName: "Entomologist")
 	}
 }
 
-extension EntomologistEntity: Identifiable {}
+extension Entomologist: Identifiable {}
 
-extension EntomologistEntity: Model {
-	static func getById(for objectId: NSManagedObjectID) -> NSFetchRequest<EntomologistEntity> {
-		let request: NSFetchRequest<EntomologistEntity> = EntomologistEntity.fetchRequest()
+extension Entomologist: Model {
+	static func getById(for objectId: NSManagedObjectID) -> NSFetchRequest<Entomologist> {
+		let request: NSFetchRequest<Entomologist> = Entomologist.fetchRequest()
 		request.sortDescriptors = []
 		request.predicate = NSPredicate(format: "SELF = %@", objectId)
 		return request
 	}
-	static func getByName(for name: String) -> NSFetchRequest<EntomologistEntity> {
-		let request = EntomologistEntity.fetchRequest()
+	static func getByName(for name: String) -> NSFetchRequest<Entomologist> {
+		let request = Entomologist.fetchRequest()
 		request.sortDescriptors = []
 		request.predicate = NSPredicate(format: "name == %@", name)
 		return request

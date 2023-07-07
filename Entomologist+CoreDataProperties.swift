@@ -6,40 +6,34 @@
 //
 //
 
-import Foundation
 import CoreData
+import Foundation
 
+public extension Entomologist {
+	@nonobjc class func fetchRequest() -> NSFetchRequest<Entomologist> {
+		return NSFetchRequest<Entomologist>(entityName: "Entomologist")
+	}
 
-extension Entomologist {
-
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Entomologist> {
-        return NSFetchRequest<Entomologist>(entityName: "Entomologist")
-    }
-
-    @NSManaged public var geoLocate: String?
-    @NSManaged public var name: String?
-    @NSManaged public var urlPhoto: Data?
-    @NSManaged public var insects: NSSet?
-
+	@NSManaged var geoLocate: String?
+	@NSManaged var name: String?
+	@NSManaged var urlPhoto: Data?
+	@NSManaged var insects: NSSet?
 }
 
 // MARK: Generated accessors for insects
-extension Entomologist {
 
-    @objc(addInsectsObject:)
-    @NSManaged public func addToInsects(_ value: Insect)
+public extension Entomologist {
+	@objc(addInsectsObject:)
+	@NSManaged func addToInsects(_ value: Insect)
 
-    @objc(removeInsectsObject:)
-    @NSManaged public func removeFromInsects(_ value: Insect)
+	@objc(removeInsectsObject:)
+	@NSManaged func removeFromInsects(_ value: Insect)
 
-    @objc(addInsects:)
-    @NSManaged public func addToInsects(_ values: NSSet)
+	@objc(addInsects:)
+	@NSManaged func addToInsects(_ values: NSSet)
 
-    @objc(removeInsects:)
-    @NSManaged public func removeFromInsects(_ values: NSSet)
-
+	@objc(removeInsects:)
+	@NSManaged func removeFromInsects(_ values: NSSet)
 }
 
-extension Entomologist : Identifiable {
-
-}
+extension Entomologist: Identifiable {}

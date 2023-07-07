@@ -30,11 +30,12 @@ struct CardCountRecord: View {
 struct CardCountRecord_Previews: PreviewProvider {
     static var previews: some View {
 		let context = CoreDataProvider.preview.viewContext
-		var record = CountRecord(context: context)
+		let record = CountRecord(context: context)
 		record.count = 5
-		var insect = Insect(context: context)
+		let insect = Insect(context: context)
 		insect.speciesName = "Abeja"
 		record.insect = insect
-		return CardCountRecord(imageUrl: "", insect: record)
+		let localeImage = UIImage(named: "ant")?.pngData()
+		return CardCountRecord(name: insect.speciesName ?? "", count: record.count, location: "XD", localeImage: localeImage, imageUrl: "", insect: record)
     }
 }

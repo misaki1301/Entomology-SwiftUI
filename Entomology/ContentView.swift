@@ -13,7 +13,7 @@ struct ContentView: View {
 	var body: some View {
 		//var isDebug = false
 		#if DEBUG
-		var isDebug = true
+		let isDebug = true
 		let userId = !(UITestingHelper.isUITesting || UITestingHelper.isInPreview) ? AppData.defaultUserId : AppData.defaultTestUserId
 		#else
 		var isDebug = false

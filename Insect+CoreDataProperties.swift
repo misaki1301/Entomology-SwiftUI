@@ -6,24 +6,19 @@
 //
 //
 
-import Foundation
 import CoreData
+import Foundation
 
+public extension Insect {
+	@nonobjc class func fetchRequest() -> NSFetchRequest<Insect> {
+		return NSFetchRequest<Insect>(entityName: "Insect")
+	}
 
-extension Insect {
-
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Insect> {
-        return NSFetchRequest<Insect>(entityName: "Insect")
-    }
-
-    @NSManaged public var speciesName: String?
-    @NSManaged public var urlPhoto: Data?
-    @NSManaged public var geoLocate: String?
-    @NSManaged public var moreInfoUrl: String?
-    @NSManaged public var entomolgist: Entomologist?
-
+	@NSManaged var speciesName: String?
+	@NSManaged var urlPhoto: Data?
+	@NSManaged var geoLocate: String?
+	@NSManaged var moreInfoUrl: String?
+	@NSManaged var entomolgist: Entomologist?
 }
 
-extension Insect : Identifiable {
-
-}
+extension Insect: Identifiable {}

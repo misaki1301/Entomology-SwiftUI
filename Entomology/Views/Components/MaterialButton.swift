@@ -26,7 +26,7 @@ struct MaterialButton_Previews: PreviewProvider {
     static var previews: some View {
 		return MaterialButton(
 			text: "Registro",
-			action: {print("hello")}
+			action: {}
 		)
     }
 }

@@ -8,33 +8,33 @@
 import Foundation
 import CoreData
 
-class CountRecordEntity: NSManagedObject {}
+class CountRecord: NSManagedObject {}
 
-extension CountRecordEntity {
+extension CountRecord {
 	@NSManaged var count: Int
 	@NSManaged var comment: String
-	@NSManaged var geoLocate: String
+	@NSManaged var location: String
 	@NSManaged var createdAt: Date
 	@NSManaged var updatedAt: Date?
 	@NSManaged public var insect: Insect?
 	@NSManaged public var entomologist: Entomologist?
-	@nonobjc public class func fetchRequest() -> NSFetchRequest<CountRecordEntity> {
-		return NSFetchRequest<CountRecordEntity>(entityName: "CountRecord")
+	@nonobjc public class func fetchRequest() -> NSFetchRequest<CountRecord> {
+		return NSFetchRequest<CountRecord>(entityName: "CountRecord")
 	}
 }
 
-extension CountRecordEntity: Identifiable {}
+extension CountRecord: Identifiable {}
 
-extension CountRecordEntity: Model {
-	static func getByEntomologist() -> NSFetchRequest<CountRecordEntity> {
-		let request = CountRecordEntity.fetchRequest()
+extension CountRecord: Model {
+	static func getByEntomologist() -> NSFetchRequest<CountRecord> {
+		let request = CountRecord.fetchRequest()
 		request.sortDescriptors = []
 		//request.predicate = NSPredicate(format: "entomologist == %@", entomologist)
 		return request
 	}
 	
-	static func getByDate() -> NSFetchRequest<CountRecordEntity> {
-		let request = CountRecordEntity.fetchRequest()
+	static func getByDate() -> NSFetchRequest<CountRecord> {
+		let request = CountRecord.fetchRequest()
 		request.sortDescriptors = [NSSortDescriptor(key: "createdAt", ascending: false)]
 		return request
 	}

@@ -24,8 +24,10 @@ struct InsectCard: View {
 			VStack(alignment: .leading, spacing: 4) {
 				Text("\(name)")
 					.font(.custom("Roboto-Medium", size: 16))
+					.foregroundColor(Color("font_label_primary"))
 				Text("\(location) 00/00/0000")
 					.font(.custom("Roboto-Regular", size: 14))
+					.foregroundColor(Color("font_label_primary"))
 			}.frame(maxWidth: .infinity, alignment: .leading)
 			Spacer()
 			if let imageData {

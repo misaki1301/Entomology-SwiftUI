@@ -18,6 +18,7 @@ struct CircleImagePickerView: View {
 			if isClickable {
 				Image(uiImage: imageProfile)
 					.resizable()
+					.scaledToFit()
 					.clipShape(Circle())
 					.frame(width: 120, height: 120)
 					.onTapGesture {
@@ -26,6 +27,7 @@ struct CircleImagePickerView: View {
 			} else {
 				Image(uiImage: imageProfile)
 					.resizable()
+					.scaledToFit()
 					.clipShape(Circle())
 					.frame(width: 120, height: 120)
 			}

@@ -11,14 +11,21 @@ struct InsectCountRecordView: View {
 	@Environment(\.managedObjectContext) private var viewContext
 	@EnvironmentObject var viewRouter: ViewRouter
 	@EnvironmentObject var entomologistViewModel: EntomologistViewModel
+	@EnvironmentObject var locationViewModel: LocationViewModel
+	
 	@State var name = "Especie"
 	@State var image = UIImage(named: "ant")!
 	@State var count = 0
 	@State var url = ""
 	@State var comment = ""
 	@State private var isEditing = false
+	
 	var body: some View {
 		VStack {
+			HStack {
+				Text("Location")
+				Text("\(locationViewModel.currentPlacemark?.country ?? "unkwown country")")
+			}
 			VStack {
 				Spacer(minLength: 152)
 				VStack {
@@ -32,7 +39,6 @@ struct InsectCountRecordView: View {
 					Image(uiImage: image)
 						.resizable()
 						.scaledToFit()
-					// .frame(width: 45, height: 45)
 					Text("\(name)")
 						.font(.custom("Roboto-Regular", size: 16))
 						.lineLimit(1)
@@ -77,8 +83,9 @@ struct InsectCountRecordView: View {
 			let newRecord = CountRecord(context: viewContext)
 			newRecord.comment = comment
 			newRecord.count = count
+			newRecord.createdAt = Date()
 			newRecord.entomologist = entomologistViewModel.currentEntomologist
-			newRecord.geoLocate = "Desconocido"
+			newRecord.location = "Desconocido"
 			newRecord.insect = insect1
 			try viewContext.save()
 			entomologistViewModel.getUser()
@@ -94,6 +101,7 @@ struct InsectCountRecordView_Previews: PreviewProvider {
 		InsectCountRecordView()
 			.environmentObject(ViewRouter())
 			.environmentObject(EntomologistViewModel())
+			.environmentObject(LocationViewModel())
 			.environment(\.managedObjectContext, CoreDataProvider.preview.persistentContainer.viewContext)
 	}
 }

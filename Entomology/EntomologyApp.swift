@@ -27,7 +27,7 @@ struct EntomologyApp: App {
 }
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
-	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
 		#if DEBUG
 		print("🤖 is a UI Test Running \(UITestingHelper.isUITesting) \n test \(AppData.defaultTestUserId) \n default \(AppData.defaultUserId)")
 		print("is in Preview \(UITestingHelper.isInPreview)")
