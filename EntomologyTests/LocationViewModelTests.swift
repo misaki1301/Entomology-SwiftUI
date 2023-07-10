@@ -40,26 +40,33 @@ final class LocationViewModelTests: XCTestCase {
 		
 	}
 	
+//	func testLocationServicesDisable() throws {
+//		XCTAssertTrue(viewModel.authorizationStatus == .denied || viewModel.authorizationStatus == .notDetermined)
+//	}
+	
 	func testIsLocationServicesActive() throws {
 		let vm = LocationViewModel()
 		XCTAssertTrue(vm.authorizationStatus == .authorizedWhenInUse || vm.authorizationStatus == .authorizedAlways)
 	}
 	
-	func testIsLocatedInCountry() async throws {
+	func testfetchCountryAndCity() async throws {
 		XCTAssertTrue(viewModel.authorizationStatus == .authorizedAlways || viewModel.authorizationStatus == .authorizedWhenInUse)
 		XCTAssertTrue(viewModel.isPermissionActive, "el permiso de localizacion GPS esta desactivado")
 		let location = CLLocation(latitude: 35.305873, longitude: 139.482749)
 		await viewModel.fetchCountryAndCity(for: location)
 		print("testIsLocated \(viewModel.currentPlacemark)")
 		if let placemark = viewModel.currentPlacemark {
-			print("has placemark on it")
+			print("has placemark on it \(placemark.country)")
 			XCTAssertEqual(placemark.country, "Japan")
 		} else {
 			XCTAssertNil(viewModel.currentPlacemark, "has nil as currentPlacemark")
 		}
-		print("latitude \(viewModel.lastSeenLocation?.coordinate.latitude ?? 0)")
-		print("latitude \(viewModel.lastSeenLocation?.coordinate.longitude ?? 0)")
-		//XCTAssertEqual(vm.currentPlacemark?.country, "Japan")
+	}
+	
+	func testFetchCountryAndCity() async throws {
+		let location: CLLocation? = nil
+		await viewModel.fetchCountryAndCity(for: location)
+		XCTAssertNil(viewModel.currentPlacemark, "the placemark is not nil")
 	}
 
 }

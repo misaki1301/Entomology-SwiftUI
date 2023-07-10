@@ -16,7 +16,6 @@
 		AD58CFCB2A26523200154EDF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD58CFCA2A26523200154EDF /* Preview Assets.xcassets */; };
 		AD58CFCD2A26523200154EDF /* CoreDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD58CFCC2A26523200154EDF /* CoreDataProvider.swift */; };
 		AD58CFD02A26523200154EDF /* Entomology.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AD58CFCE2A26523200154EDF /* Entomology.xcdatamodeld */; };
-		AD58CFDA2A26523300154EDF /* EntomologyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD58CFD92A26523300154EDF /* EntomologyTests.swift */; };
 		AD58CFE42A26523300154EDF /* EntomologyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD58CFE32A26523300154EDF /* EntomologyUITests.swift */; };
 		AD58CFE62A26523300154EDF /* EntomologyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD58CFE52A26523300154EDF /* EntomologyUITestsLaunchTests.swift */; };
 		AD58CFFF2A2655CF00154EDF /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD58CFF32A2655CE00154EDF /* Roboto-Regular.ttf */; };
@@ -96,7 +95,6 @@
 		AD58CFCC2A26523200154EDF /* CoreDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataProvider.swift; sourceTree = "<group>"; };
 		AD58CFCF2A26523200154EDF /* Entomology.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Entomology.xcdatamodel; sourceTree = "<group>"; };
 		AD58CFD52A26523300154EDF /* EntomologyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EntomologyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AD58CFD92A26523300154EDF /* EntomologyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntomologyTests.swift; sourceTree = "<group>"; };
 		AD58CFDF2A26523300154EDF /* EntomologyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EntomologyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD58CFE32A26523300154EDF /* EntomologyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntomologyUITests.swift; sourceTree = "<group>"; };
 		AD58CFE52A26523300154EDF /* EntomologyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntomologyUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -129,7 +127,6 @@
 		AD642A872A3277BD00181622 /* PhotoSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSource.swift; sourceTree = "<group>"; };
 		AD642A892A32D9CE00181622 /* CountRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountRecord.swift; sourceTree = "<group>"; };
 		AD642A8B2A330A9A00181622 /* InsectCountRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsectCountRecordView.swift; sourceTree = "<group>"; };
-		AD642A8D2A3A07EE00181622 /* Entomology.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Entomology.xctestplan; sourceTree = "<group>"; };
 		AD642A8F2A3BE89D00181622 /* HomeViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewUITests.swift; sourceTree = "<group>"; };
 		AD642A922A3BEA0600181622 /* UITestingHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestingHelper.swift; sourceTree = "<group>"; };
 		AD642A952A3C14E900181622 /* MockDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataSource.swift; sourceTree = "<group>"; };
@@ -148,6 +145,7 @@
 		ADD4A4852A300D1B000A3BE5 /* InsectDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsectDetailView.swift; sourceTree = "<group>"; };
 		ADD4A4872A3024C3000A3BE5 /* EntomologistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntomologistViewModel.swift; sourceTree = "<group>"; };
 		ADF0AA252A547555009DF10F /* GeoLocate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoLocate.swift; sourceTree = "<group>"; };
+		F5A3EE9B2A58DE2700A7422D /* Entomology.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Entomology.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,8 +185,8 @@
 		AD58CFB72A26522F00154EDF = {
 			isa = PBXGroup;
 			children = (
+				F5A3EE9B2A58DE2700A7422D /* Entomology.xctestplan */,
 				AD48C0242A55D32A001BBE95 /* Settings.bundle */,
-				AD642A8D2A3A07EE00181622 /* Entomology.xctestplan */,
 				AD58CFC22A26522F00154EDF /* Entomology */,
 				AD58CFD82A26523300154EDF /* EntomologyTests */,
 				AD58CFE22A26523300154EDF /* EntomologyUITests */,
@@ -242,7 +240,6 @@
 		AD58CFD82A26523300154EDF /* EntomologyTests */ = {
 			isa = PBXGroup;
 			children = (
-				AD58CFD92A26523300154EDF /* EntomologyTests.swift */,
 				AD48C0222A55AF53001BBE95 /* LocationViewModelTests.swift */,
 			);
 			path = EntomologyTests;
@@ -629,7 +626,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD58CFDA2A26523300154EDF /* EntomologyTests.swift in Sources */,
 				AD48C0232A55AF53001BBE95 /* LocationViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

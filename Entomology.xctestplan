@@ -1,13 +1,10 @@
 {
   "configurations" : [
     {
-      "id" : "45558D6C-F274-4EFD-9B7D-5F43C4BC6B71",
+      "id" : "95BFDC70-5458-428F-B555-8E6C9154B9A8",
       "name" : "Test Scheme Action",
       "options" : {
-        "locationScenario" : {
-          "identifier" : "Tokyo, Japan",
-          "referenceType" : "built-in"
-        }
+
       }
     }
   ],

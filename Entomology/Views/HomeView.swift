@@ -38,14 +38,14 @@ struct HomeView: View {
 						if let image = current?.urlPhoto {
 							Image(uiImage: UIImage(data: image)!)
 								.resizable()
-								.scaledToFit()
+								.scaledToFill()
 								.clipShape(Circle())
 								.frame(width: 65, height: 65)
 								.accessibilityIdentifier("profileImage")
 						} else {
 							Image("newphoto")
 								.resizable()
-								.scaledToFit()
+								.scaledToFill()
 								.clipShape(Circle())
 								.frame(width: 65, height: 65)
 								.accessibilityIdentifier("profileImagePlaceholder")
@@ -77,7 +77,7 @@ struct HomeView: View {
 										count: $0.count, location: $0.location,
 										localeImage: $0.insect?.localePhoto,
 										imageUrl: $0.insect?.urlPhoto ?? "",
-										insect: $0
+										countRecord: $0
 									)
 									.listRowSeparator(.hidden)
 									.accessibilityIdentifier("item_list_\($0.id)")

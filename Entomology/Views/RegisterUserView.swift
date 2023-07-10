@@ -41,7 +41,7 @@ struct RegisterUserView: View {
 			Spacer()
 			Image(uiImage: profileImage)
 				.resizable()
-				.scaledToFit()
+				.scaledToFill()
 				.clipShape(Circle())
 				.frame(width: 120, height: 120)
 				.onTapGesture {

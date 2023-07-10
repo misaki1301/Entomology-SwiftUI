@@ -10,16 +10,14 @@ import SwiftUI
 
 struct InsectDetailView: View {
 	@State var record: CountRecord
-	@State var region: MKCoordinateRegion = .init(
-		center: CLLocationCoordinate2D(
-			latitude: 35.30487705019497,
-			longitude: 139.48254879527659
-		),
-		span: MKCoordinateSpan(
-			latitudeDelta: 0.02,
-			longitudeDelta: 0.02
-		)
-	)
+	@State private var region: MKCoordinateRegion
+	
+	init(record: CountRecord) {
+		let coordinate = CLLocationCoordinate2D(latitude: record.geolocate?.latitude ?? 0, longitude: record.geolocate?.longitude ?? 0)
+		self.region = MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
+		self.record = record
+		//self.region = record.geo
+	}
 
 	var body: some View {
 		VStack {
@@ -28,10 +26,19 @@ struct InsectDetailView: View {
 				count: record.count,
 				imageUrl: record.insect?.urlPhoto ?? "",
 				url: record.insect?.moreInfoUrl ?? "",
+				createdAt: record.createdAt,
+				comment: record.comment,
+				city: record.location,
+				latitude: record.geolocate?.latitude ?? 0,
+				longitude: record.geolocate?.longitude ?? 0,
 				location: $region
 			)
 			.padding(.horizontal, 26)
-		}.backgroundColor(Color("background"))
+		}.onAppear {
+			let coordinate = CLLocationCoordinate2D(latitude: record.geolocate?.latitude ?? 0, longitude: record.geolocate?.longitude ?? 0)
+			region = MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
+		}
+		.backgroundColor(Color("background"))
 	}
 }
 
@@ -47,7 +54,11 @@ struct InsectDetailView_Previews: PreviewProvider {
 		let coordinates = CLLocationCoordinate2D(latitude: 35.30487705019497, longitude: 139.48254879527659)
 		let span = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
 		let region = MKCoordinateRegion(center: coordinates, span: span)
+		let locate = GeoLocate(context: CoreDataProvider.preview.viewContext)
+		locate.latitude = 35.30487705019497
+		locate.longitude = 139.48254879527659
+		record.geolocate = locate
 
-		return InsectDetailView(record: record, region: region)
+		return InsectDetailView(record: record)
 	}
 }

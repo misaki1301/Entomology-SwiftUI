@@ -22,12 +22,16 @@ struct InsectFormView: View {
 			Spacer()
 			CircleImagePickerView(showPhotoOptions: $showOptions, imageProfile: $image, isClickable: true)
 			VStack(alignment: .leading) {
-				Text("Nombre").padding(.leading, 34)
+				Text("Nombre")
+					.padding(.leading, 34)
+					.foregroundColor(Color("font_label_primary"))
 				TextField("Nombre especie", text: $name, onEditingChanged: { isEditingName = $0 })
 					.textFieldStyle(MaterialTextFieldStyle(isEditing: isEditingName))
 			}
 			VStack(alignment: .leading) {
-				Text("Información adicional").padding(.leading, 34)
+				Text("Información adicional")
+					.padding(.leading, 34)
+					.foregroundColor(Color("font_label_primary"))
 				TextField("URL", text: $url, onEditingChanged: { isEditingUrl = $0 })
 					.textFieldStyle(MaterialTextFieldStyle(isEditing: isEditingUrl))
 			}

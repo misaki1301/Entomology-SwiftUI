@@ -53,18 +53,17 @@ class LocationViewModel: NSObject, ObservableObject,CLLocationManagerDelegate {
 		authorizationStatus = manager.authorizationStatus
 	}
 	
-	private func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) async {
+	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 		lastSeenLocation = locations.first
-		await fetchCountryAndCity(for: locations.first)
 	}
 	
 	func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
 		updateAuthorizationStatus()
 	}
 	
+	@MainActor
 	func fetchCountryAndCity(for location: CLLocation?) async {
 		guard let location = location else {
-			print("Invalid location...")
 			return
 		}
 		let geocoder = CLGeocoder()
@@ -72,12 +71,5 @@ class LocationViewModel: NSObject, ObservableObject,CLLocationManagerDelegate {
 		if placemarks != nil {
 			self.currentPlacemark = placemarks?.first
 		}
-		//placemarks, error in
-//			guard error != nil else {
-//				print("error geodecoding... \(error)")
-//				return
-//			}
-//			self.currentPlacemark = placemarks?.first
-//		}
 	}
 }

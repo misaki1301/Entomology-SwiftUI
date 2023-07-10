@@ -14,6 +14,9 @@ struct InsectCard: View {
 	var location: String
 	var imageData: Data?
 	var imageUrl: String
+	var date: Date = Date()
+	//var formatter = DateFormatter()
+	
 	var body: some View {
 		HStack(spacing: 16) {
 			ZStack {
@@ -25,7 +28,7 @@ struct InsectCard: View {
 				Text("\(name)")
 					.font(.custom("Roboto-Medium", size: 16))
 					.foregroundColor(Color("font_label_primary"))
-				Text("\(location) 00/00/0000")
+				Text("\(location) \(date.formatted(date: .numeric, time: .omitted))")
 					.font(.custom("Roboto-Regular", size: 14))
 					.foregroundColor(Color("font_label_primary"))
 			}.frame(maxWidth: .infinity, alignment: .leading)
@@ -55,6 +58,12 @@ struct InsectCard: View {
 struct InsectCard_Previews: PreviewProvider {
 	static var previews: some View {
 
-		InsectCard(name: "Hormiga", count: 3, location: "Narnia", imageData: nil, imageUrl: "https://static01.nyt.com/images/2017/05/17/pageoneplus/17a2_video/sciencetake-bee-pollen2-superJumbo.jpg")
+		InsectCard(
+			name: "Hormiga",
+			count: 3,
+			location: "Narnia",
+			imageData: nil,
+			imageUrl: "https://static01.nyt.com/images/2017/05/17/pageoneplus/17a2_video/sciencetake-bee-pollen2-superJumbo.jpg",
+			date: Date())
 	}
 }

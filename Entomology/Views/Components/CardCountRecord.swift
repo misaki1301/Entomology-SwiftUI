@@ -13,10 +13,10 @@ struct CardCountRecord: View {
 	var location = ""
 	var localeImage: Data?
 	var imageUrl: String
-	var insect: CountRecord
+	var countRecord: CountRecord
 	var body: some View {
 		ZStack {
-			NavigationLink(destination: InsectDetailView(record: insect)) {
+			NavigationLink(destination: InsectDetailView(record: countRecord)) {
 				EmptyView()
 			}.opacity(0)
 			InsectCard(name: name, count: count, location: location, imageData: localeImage, imageUrl: imageUrl)
@@ -36,6 +36,6 @@ struct CardCountRecord_Previews: PreviewProvider {
 		insect.speciesName = "Abeja"
 		record.insect = insect
 		let localeImage = UIImage(named: "ant")?.pngData()
-		return CardCountRecord(name: insect.speciesName ?? "", count: record.count, location: "XD", localeImage: localeImage, imageUrl: "", insect: record)
+		return CardCountRecord(name: insect.speciesName ?? "", count: record.count, location: "XD", localeImage: localeImage, imageUrl: "", countRecord: record)
     }
 }

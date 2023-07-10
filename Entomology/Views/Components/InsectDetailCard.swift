@@ -8,12 +8,23 @@
 import SwiftUI
 import MapKit
 
+struct AnnotatedItem: Identifiable {
+	let id = UUID()
+	var name: String
+	var coordinate: CLLocationCoordinate2D
+}
+
 struct InsectDetailCard: View {
 	var name: String
 	var count: Int
 	var image: Data?
 	var imageUrl: String
 	var url: String
+	var createdAt: Date = Date()
+	var comment: String = ""
+	var city: String?
+	var latitude: Double
+	var longitude: Double
 	@Binding var location: MKCoordinateRegion
 	var body: some View {
 		VStack(alignment: .leading, spacing: 0) {
@@ -27,7 +38,7 @@ struct InsectDetailCard: View {
 					Text("\(name)")
 						.font(.custom("Roboto-Medium", size: 16))
 						.foregroundColor(Color("font_label_primary"))
-					Text("Ciudad 00/00/0000")
+					Text("\(city ?? "lugar desconocido") \(createdAt.formatted())")
 						.font(.custom("Roboto-Regular", size: 14))
 						.foregroundColor(Color("font_label_primary"))
 				}.frame(maxWidth: .infinity, alignment: .leading)
@@ -55,9 +66,12 @@ struct InsectDetailCard: View {
 			.listRowSeparator(.hidden)
 			.listRowBackground(Color("background"))
 			.listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 16, trailing: 0))
-			Map(coordinateRegion: $location)
+			Map(coordinateRegion: $location, annotationItems: [AnnotatedItem(name: "Record", coordinate: .init(latitude: latitude, longitude: longitude))]) {
+				MapMarker(coordinate: $0.coordinate, tint: .green)
+				
+			}
 				.frame(height: 204)
-			Text("El comentario que se realizara para el conteo")
+			Text("\(comment)")
 				.font(.custom("Roboto-Regular", size: 16))
 				.foregroundColor(Color("font_label_primary"))
 				.padding(16)
@@ -79,6 +93,17 @@ struct InsectDetailCard_Previews: PreviewProvider {
     static var previews: some View {
 		let coordinates = CLLocationCoordinate2D(latitude: 35.30487705019497, longitude: 139.48254879527659)
 		let region = MKCoordinateRegion(center: coordinates, span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
-		return InsectDetailCard(name: "Hormiga", count: 5, imageUrl: "https://es.wikipedia.org/wiki/Morpho#/media/Archivo:Morpho_didius_Male_Dos_MHNT.jpg", url: "", location: .constant(region))
+		let image = "https://es.wikipedia.org/wiki/Morpho#/media/Archivo:Morpho_didius_Male_Dos_MHNT.jpg"
+		return InsectDetailCard(
+			name: "Hormiga",
+			count: 5,
+			image: nil,
+			imageUrl: image,
+			url: "",
+			comment: "",
+			city: "Lando",
+			latitude: 31.231,
+			longitude: -123.22,
+			location: .constant(region))
     }
 }

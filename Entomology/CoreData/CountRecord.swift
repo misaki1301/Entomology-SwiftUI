@@ -18,6 +18,7 @@ extension CountRecord {
 	@NSManaged var updatedAt: Date?
 	@NSManaged public var insect: Insect?
 	@NSManaged public var entomologist: Entomologist?
+	@NSManaged public var geolocate: GeoLocate?
 	@nonobjc public class func fetchRequest() -> NSFetchRequest<CountRecord> {
 		return NSFetchRequest<CountRecord>(entityName: "CountRecord")
 	}
