@@ -12,7 +12,7 @@ struct InsectCountRecordView: View {
 	@EnvironmentObject var viewRouter: ViewRouter
 	@EnvironmentObject var entomologistViewModel: EntomologistViewModel
 	@EnvironmentObject var locationViewModel: LocationViewModel
-
+	internal let inspection = Inspection<Self>()
 	@State var name = "Especie"
 	@State var image = UIImage(named: "ant")!
 	@State var count = 0
@@ -79,6 +79,9 @@ struct InsectCountRecordView: View {
 				let location = locationViewModel.lastSeenLocation
 				await locationViewModel.fetchCountryAndCity(for: location)
 			}
+		}
+		.onReceive(inspection.notice) {
+			self.inspection.visit(self, $0)
 		}
 		.padding(16)
 		.backgroundColor(Color("background"))

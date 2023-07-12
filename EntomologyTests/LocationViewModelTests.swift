@@ -54,9 +54,7 @@ final class LocationViewModelTests: XCTestCase {
 		XCTAssertTrue(viewModel.isPermissionActive, "el permiso de localizacion GPS esta desactivado")
 		let location = CLLocation(latitude: 35.305873, longitude: 139.482749)
 		await viewModel.fetchCountryAndCity(for: location)
-		print("testIsLocated \(viewModel.currentPlacemark)")
 		if let placemark = viewModel.currentPlacemark {
-			print("has placemark on it \(placemark.country)")
 			XCTAssertEqual(placemark.country, "Japan")
 		} else {
 			XCTAssertNil(viewModel.currentPlacemark, "has nil as currentPlacemark")

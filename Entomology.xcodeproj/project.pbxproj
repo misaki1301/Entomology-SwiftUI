@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD1B9F132A5E3FE8004582B5 /* Inspection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1B9F122A5E3FE8004582B5 /* Inspection.swift */; };
+		AD1B9F152A5E4103004582B5 /* Inspectable+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1B9F142A5E4103004582B5 /* Inspectable+Model.swift */; };
 		AD48C0232A55AF53001BBE95 /* LocationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD48C0222A55AF53001BBE95 /* LocationViewModelTests.swift */; };
 		AD48C0252A55D32A001BBE95 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AD48C0242A55D32A001BBE95 /* Settings.bundle */; };
 		AD517A6A2A2AC12800BDC415 /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD517A692A2AC12800BDC415 /* LocationViewModel.swift */; };
@@ -64,6 +66,8 @@
 		ADD4A4862A300D1B000A3BE5 /* InsectDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD4A4852A300D1B000A3BE5 /* InsectDetailView.swift */; };
 		ADD4A4882A3024C3000A3BE5 /* EntomologistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD4A4872A3024C3000A3BE5 /* EntomologistViewModel.swift */; };
 		ADF0AA262A547555009DF10F /* GeoLocate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF0AA252A547555009DF10F /* GeoLocate.swift */; };
+		ADF53ACF2A5DDFE100ACA1A9 /* InsectCountRecordViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF53ACE2A5DDFE100ACA1A9 /* InsectCountRecordViewTests.swift */; };
+		ADF53AD52A5DF69300ACA1A9 /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = ADF53AD42A5DF69300ACA1A9 /* ViewInspector */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +88,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AD1B9F122A5E3FE8004582B5 /* Inspection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inspection.swift; sourceTree = "<group>"; };
+		AD1B9F142A5E4103004582B5 /* Inspectable+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Inspectable+Model.swift"; sourceTree = "<group>"; };
 		AD48C0222A55AF53001BBE95 /* LocationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModelTests.swift; sourceTree = "<group>"; };
 		AD48C0242A55D32A001BBE95 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		AD517A692A2AC12800BDC415 /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
@@ -145,6 +151,7 @@
 		ADD4A4852A300D1B000A3BE5 /* InsectDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsectDetailView.swift; sourceTree = "<group>"; };
 		ADD4A4872A3024C3000A3BE5 /* EntomologistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntomologistViewModel.swift; sourceTree = "<group>"; };
 		ADF0AA252A547555009DF10F /* GeoLocate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoLocate.swift; sourceTree = "<group>"; };
+		ADF53ACE2A5DDFE100ACA1A9 /* InsectCountRecordViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsectCountRecordViewTests.swift; sourceTree = "<group>"; };
 		F5A3EE9B2A58DE2700A7422D /* Entomology.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Entomology.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -160,6 +167,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADF53AD52A5DF69300ACA1A9 /* ViewInspector in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +249,8 @@
 			isa = PBXGroup;
 			children = (
 				AD48C0222A55AF53001BBE95 /* LocationViewModelTests.swift */,
+				ADF53ACE2A5DDFE100ACA1A9 /* InsectCountRecordViewTests.swift */,
+				AD1B9F142A5E4103004582B5 /* Inspectable+Model.swift */,
 			);
 			path = EntomologyTests;
 			sourceTree = "<group>";
@@ -385,6 +395,7 @@
 			isa = PBXGroup;
 			children = (
 				ADB6F0852A2F3751009294CF /* AppData.swift */,
+				AD1B9F122A5E3FE8004582B5 /* Inspection.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -434,6 +445,8 @@
 			dependencies = (
 			);
 			name = Entomology;
+			packageProductDependencies = (
+			);
 			productName = Entomology;
 			productReference = AD58CFC02A26522F00154EDF /* Entomology.app */;
 			productType = "com.apple.product-type.application";
@@ -452,6 +465,9 @@
 				AD58CFD72A26523300154EDF /* PBXTargetDependency */,
 			);
 			name = EntomologyTests;
+			packageProductDependencies = (
+				ADF53AD42A5DF69300ACA1A9 /* ViewInspector */,
+			);
 			productName = EntomologyTests;
 			productReference = AD58CFD52A26523300154EDF /* EntomologyTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -506,6 +522,9 @@
 				Base,
 			);
 			mainGroup = AD58CFB72A26522F00154EDF;
+			packageReferences = (
+				ADF53AD32A5DF69300ACA1A9 /* XCRemoteSwiftPackageReference "ViewInspector" */,
+			);
 			productRefGroup = AD58CFC12A26522F00154EDF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -619,6 +638,7 @@
 				AD58D0152A2665A100154EDF /* MaterialStyle.swift in Sources */,
 				AD642A932A3BEA0600181622 /* UITestingHelper.swift in Sources */,
 				ADB6F0792A2E89F7009294CF /* HomeView.swift in Sources */,
+				AD1B9F132A5E3FE8004582B5 /* Inspection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,6 +646,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD1B9F152A5E4103004582B5 /* Inspectable+Model.swift in Sources */,
+				ADF53ACF2A5DDFE100ACA1A9 /* InsectCountRecordViewTests.swift in Sources */,
 				AD48C0232A55AF53001BBE95 /* LocationViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -961,6 +983,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		ADF53AD32A5DF69300ACA1A9 /* XCRemoteSwiftPackageReference "ViewInspector" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nalexn/ViewInspector";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.7;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		ADF53AD42A5DF69300ACA1A9 /* ViewInspector */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ADF53AD32A5DF69300ACA1A9 /* XCRemoteSwiftPackageReference "ViewInspector" */;
+			productName = ViewInspector;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		AD58CFCE2A26523200154EDF /* Entomology.xcdatamodeld */ = {
