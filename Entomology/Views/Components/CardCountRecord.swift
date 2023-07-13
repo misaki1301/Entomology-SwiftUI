@@ -36,6 +36,7 @@ struct CardCountRecord_Previews: PreviewProvider {
 		insect.speciesName = "Abeja"
 		record.insect = insect
 		let localeImage = UIImage(named: "ant")?.pngData()
-		return CardCountRecord(name: insect.speciesName ?? "", count: record.count, location: "XD", localeImage: localeImage, imageUrl: "", countRecord: record)
+		return CardCountRecord(name: insect.speciesName ?? "", count: record.count, location: "Lima, Peru", localeImage: localeImage, imageUrl: "", countRecord: record)
+			.padding(.horizontal, 26)
     }
 }

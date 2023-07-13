@@ -17,7 +17,7 @@ final class InsectCountRecordViewTests: XCTestCase {
 
 	
 	func testParamsPassedExists() throws {
-		let context = CoreDataProvider.preview.persistentContainer.viewContext
+		// let context = CoreDataProvider.preview.persistentContainer.viewContext
 		let view = InsectCountRecordView(name: "desconocido", image: UIImage(named: "ant")!, count: 20, url: "", comment: "XD")
 		
 		let expectation = view.inspection.inspect { item in
@@ -28,26 +28,24 @@ final class InsectCountRecordViewTests: XCTestCase {
 		
 		ViewHosting.host(view: view.environmentObject(LocationViewModel()).environmentObject(ViewRouter()).environmentObject(EntomologistViewModel()))
 		
-		
 		self.wait(for: [expectation], timeout: 1.5)
-		//view.saveToEntomologist()
-		//let records = try? context.fetch(CountRecord.getByDate())
-		//XCTAssertEqual(view.count, records?.first?.count, "The record is not the same!")
 	}
 	
 	func testSaveToEntomologist() throws {
 		let context = CoreDataProvider.preview.persistentContainer.viewContext
 		let view = InsectCountRecordView(name: "desconocido", image: UIImage(named: "ant")!, count: 20, url: "", comment: "XD")
 		
-		let expectation = view.inspection.inspect { item in
-			XCTAssertEqual(view.name, "desconocido")
-			XCTAssertEqual(view.count, 20)
-			XCTAssertEqual(view.comment, "XD")
-			let button = try item.find(button: "Guardar")
+		let expectation = view.inspection.inspect { v in
+			XCTAssertEqual(try v.actualView().name, "desconocido")
+			XCTAssertEqual(try v.actualView().count, 20)
+			XCTAssertEqual(try v.actualView().comment, "XD")
+			XCTAssertEqual(try v.actualView().url, "")
+			XCTAssertNotNil(try v.actualView().image, "the image is nil")
+			let button = try v.find(button: "Guardar")
 			try button.tap()
 			let records = try context.fetch(CountRecord.getByDate())
-			XCTAssertEqual(view.count, records.first?.count)
-			XCTAssertEqual(view.name, records.first?.insect?.speciesName)
+			XCTAssertEqual(try v.actualView().count, records.first?.count)
+			XCTAssertEqual(try v.actualView().name, records.first?.insect?.speciesName)
 		}
 		
 		ViewHosting.host(view: view.environmentObject(LocationViewModel()).environmentObject(ViewRouter()).environmentObject(EntomologistViewModel()).environment(\.managedObjectContext, context))

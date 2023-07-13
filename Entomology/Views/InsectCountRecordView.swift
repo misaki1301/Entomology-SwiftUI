@@ -45,9 +45,9 @@ struct InsectCountRecordView: View {
 						.lineLimit(1)
 						.foregroundColor(Color("font_label_primary"))
 					HStack(spacing: 48) {
-						MaterialFabButton(action: { if count >= 1 { count -= 1 }}, icon: "minus", color: "fab_minus_background")
+						MaterialFabButton(action: incrementCount, icon: "minus", color: "fab_minus_background")
 							.accessibilityIdentifier("fab_minus")
-						MaterialFabButton(action: { count += 1 }, icon: "plus")
+						MaterialFabButton(action: incrementCount, icon: "plus")
 							.accessibilityIdentifier("fab_plus")
 					}.padding(.trailing, 16)
 				}
@@ -67,7 +67,6 @@ struct InsectCountRecordView: View {
 							.padding(.bottom, 46)
 						MaterialButton(text: "Guardar", action: saveToEntomologist)
 					}
-					// Spacer()
 				} else {
 					Spacer(minLength: 282)
 				}
@@ -87,6 +86,14 @@ struct InsectCountRecordView: View {
 		.backgroundColor(Color("background"))
 	}
 
+	private func incrementCount() {
+		if count >= 1 {
+			count -= 1
+		} else {
+			count += 1
+		}
+	}
+	
 	private func saveToEntomologist() {
 		do {
 			let lastSeenLocation = locationViewModel.lastSeenLocation
@@ -112,6 +119,7 @@ struct InsectCountRecordView: View {
 			entomologistViewModel.getUser()
 			viewRouter.returnToHome = false
 		} catch let error as NSError {
+			// swiftlint:disable:next no_direct_standard_out_logs
 			print("Save error: \(error), \(error.userInfo)")
 		}
 	}

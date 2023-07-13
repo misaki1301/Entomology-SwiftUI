@@ -28,9 +28,11 @@ struct InsectCard: View {
 				Text("\(name)")
 					.font(.custom("Roboto-Medium", size: 16))
 					.foregroundColor(Color("font_label_primary"))
+					.frame(maxWidth: .infinity, alignment: .leading)
 				Text("\(location) \(date.formatted(date: .numeric, time: .omitted))")
 					.font(.custom("Roboto-Regular", size: 14))
 					.foregroundColor(Color("font_label_primary"))
+					.frame(maxWidth: .infinity, alignment: .leading)
 			}.frame(maxWidth: .infinity, alignment: .leading)
 			Spacer()
 			if let imageData {
@@ -40,6 +42,7 @@ struct InsectCard: View {
 			} else {
 				AsyncImage(url: URL(string: imageUrl)!) { image in
 					image.resizable()
+						.scaledToFit()
 
 				} placeholder: {
 					ProgressView()
@@ -65,5 +68,6 @@ struct InsectCard_Previews: PreviewProvider {
 			imageData: nil,
 			imageUrl: "https://static01.nyt.com/images/2017/05/17/pageoneplus/17a2_video/sciencetake-bee-pollen2-superJumbo.jpg",
 			date: Date())
+		.padding(.horizontal, 26)
 	}
 }
