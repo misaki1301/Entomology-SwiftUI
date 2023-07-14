@@ -47,6 +47,7 @@ struct InsectDetailView_Previews: PreviewProvider {
 		let record = CountRecord(context: CoreDataProvider.preview.viewContext)
 		record.comment = "Este es un ejemplo de comentario para preview"
 		record.count = 5
+		record.createdAt = Date()
 		record.location = "Narnia"
 		let insect = Insect(context: CoreDataProvider.preview.viewContext)
 		insect.speciesName = "Abeja"
@@ -58,6 +59,7 @@ struct InsectDetailView_Previews: PreviewProvider {
 		locate.latitude = 35.30487705019497
 		locate.longitude = 139.48254879527659
 		record.geolocate = locate
+		record.insect = insect
 
 		return InsectDetailView(record: record)
 	}
