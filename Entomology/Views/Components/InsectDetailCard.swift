@@ -5,8 +5,8 @@
 //  Created by Paul Pacheco on 21/06/23.
 //
 
-import SwiftUI
 import MapKit
+import SwiftUI
 
 struct AnnotatedItem: Identifiable {
 	let id = UUID()
@@ -20,7 +20,7 @@ struct InsectDetailCard: View {
 	var image: Data?
 	var imageUrl: String
 	var url: String
-	var createdAt: Date = Date()
+	var createdAt: Date = .init()
 	var comment: String = ""
 	var city: String?
 	var latitude: Double
@@ -38,7 +38,7 @@ struct InsectDetailCard: View {
 					Text("\(name)")
 						.font(.custom("Roboto-Medium", size: 16))
 						.foregroundColor(Color("font_label_primary"))
-					Text("\(city ?? "lugar desconocido") \(createdAt.formatted())")
+					Text("\(city ?? "lugar desconocido") \(createdAt.formatted(date: .numeric, time: .omitted))")
 						.font(.custom("Roboto-Regular", size: 14))
 						.foregroundColor(Color("font_label_primary"))
 				}.frame(maxWidth: .infinity, alignment: .leading)
@@ -52,7 +52,7 @@ struct InsectDetailCard: View {
 						AsyncImage(url: url) { image in
 							image.resizable()
 								.scaledToFit()
-							
+
 						} placeholder: {
 							ProgressView()
 						}
@@ -68,9 +68,8 @@ struct InsectDetailCard: View {
 			.listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 16, trailing: 0))
 			Map(coordinateRegion: $location, annotationItems: [AnnotatedItem(name: "Record", coordinate: .init(latitude: latitude, longitude: longitude))]) {
 				MapMarker(coordinate: $0.coordinate, tint: .green)
-				
 			}
-				.frame(height: 204)
+			.frame(height: 204)
 			Text("\(comment)")
 				.font(.custom("Roboto-Regular", size: 16))
 				.foregroundColor(Color("font_label_primary"))
@@ -80,8 +79,8 @@ struct InsectDetailCard: View {
 				.padding(16)
 			HStack {
 				Spacer()
-				MaterialButton(text: "Guardar", action: {})
-				MaterialButton(text: "Editar", action: {})
+				MaterialOutlinedButton(text: "Guardar", action: {})
+				MaterialFlatButton(text: "Editar", action: {})
 			}.padding(16)
 		}
 		.background(Color("card_background"))
@@ -90,7 +89,7 @@ struct InsectDetailCard: View {
 }
 
 struct InsectDetailCard_Previews: PreviewProvider {
-    static var previews: some View {
+	static var previews: some View {
 		let coordinates = CLLocationCoordinate2D(latitude: 35.30487705019497, longitude: 139.48254879527659)
 		let region = MKCoordinateRegion(center: coordinates, span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
 		let image = "https://es.wikipedia.org/wiki/Morpho#/media/Archivo:Morpho_didius_Male_Dos_MHNT.jpg"
@@ -101,9 +100,9 @@ struct InsectDetailCard_Previews: PreviewProvider {
 			imageUrl: image,
 			url: "",
 			comment: "",
-			city: "Lando",
+			city: "Lando, Canada",
 			latitude: 31.231,
 			longitude: -123.22,
 			location: .constant(region))
-    }
+	}
 }
