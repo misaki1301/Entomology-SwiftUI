@@ -53,6 +53,58 @@ private extension MaterialFabButtonStyle {
 	}
 }
 
+struct MaterialFillButtonStyle: ButtonStyle {
+	func makeBody(configuration: Configuration) -> some View {
+		MaterialFillButtonStyleView(configuration: configuration)
+	}
+}
+
+private extension MaterialFillButtonStyle {
+	struct MaterialFillButtonStyleView: View {
+		@Environment(\.isEnabled) var isEnabled
+		let configuration: MaterialFillButtonStyle.Configuration
+		var body: some View {
+			return configuration.label
+				.font(.custom("Roboto-Medium", size: 14))
+				.foregroundColor(.white)
+				.background(isEnabled ? Color("font_primary") : Color.clear)
+				.overlay(RoundedRectangle(cornerRadius: 100).stroke(!isEnabled ? Color("textfield_focus_border") : Color.clear, lineWidth: 2))
+				.cornerRadius(100)
+				//.shadow(radius: isEnabled ? 2 : 0, x: 0, y: isEnabled ? 2 : 0)
+				// make the button a bit more translucent when pressed
+				.opacity(configuration.isPressed ? 0.8 : 1.0)
+				// make the button a bit smaller when pressed
+				.scaleEffect(configuration.isPressed ? 0.98 : 1.0)
+		}
+	}
+}
+
+struct MaterialOutlinedButtonStyle: ButtonStyle {
+	func makeBody(configuration: Configuration) -> some View {
+		MaterialOutlinedButtonStyleView(configuration: configuration)
+	}
+}
+
+private extension MaterialOutlinedButtonStyle {
+	struct MaterialOutlinedButtonStyleView: View {
+		@Environment(\.isEnabled) var isEnabled
+		let configuration: MaterialOutlinedButtonStyle.Configuration
+		var body: some View {
+			return configuration.label
+				.font(.custom("Roboto-Medium", size: 14))
+				.foregroundColor(Color("font_primary"))
+				.background(Color.clear)
+				.overlay(RoundedRectangle(cornerRadius: 100).stroke(Color("textfield_focus_border"), lineWidth: 2))
+				.cornerRadius(100)
+				//.shadow(radius: isEnabled ? 2 : 0, x: 0, y: isEnabled ? 2 : 0)
+				// make the button a bit more translucent when pressed
+				.opacity(configuration.isPressed ? 0.8 : 1.0)
+				// make the button a bit smaller when pressed
+				.scaleEffect(configuration.isPressed ? 0.98 : 1.0)
+		}
+	}
+}
+
 struct MaterialButtonStyle: ButtonStyle {
 	func makeBody(configuration: Self.Configuration) -> some View {
 		MaterialButtonStyleView(configuration: configuration)
