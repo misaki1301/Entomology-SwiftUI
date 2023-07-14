@@ -56,6 +56,7 @@
 		ADA563D82A4DDF44009595B1 /* CountRecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA563D72A4DDF44009595B1 /* CountRecordModel.swift */; };
 		ADA563DA2A4DE1BB009595B1 /* EntomologistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA563D92A4DE1BB009595B1 /* EntomologistModel.swift */; };
 		ADA563DC2A4DE1C5009595B1 /* InsectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA563DB2A4DE1C5009595B1 /* InsectModel.swift */; };
+		ADACB2042A608EC2009B02D4 /* TextAutoCompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADACB2032A608EC2009B02D4 /* TextAutoCompleteView.swift */; };
 		ADB6F0772A2E7AD7009294CF /* CoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB6F0762A2E7AD7009294CF /* CoreDataModel.swift */; };
 		ADB6F0792A2E89F7009294CF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB6F0782A2E89F7009294CF /* HomeView.swift */; };
 		ADB6F0802A2F27D5009294CF /* MaterialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB6F07F2A2F27D5009294CF /* MaterialButton.swift */; };
@@ -141,6 +142,7 @@
 		ADA563D72A4DDF44009595B1 /* CountRecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountRecordModel.swift; sourceTree = "<group>"; };
 		ADA563D92A4DE1BB009595B1 /* EntomologistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntomologistModel.swift; sourceTree = "<group>"; };
 		ADA563DB2A4DE1C5009595B1 /* InsectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsectModel.swift; sourceTree = "<group>"; };
+		ADACB2032A608EC2009B02D4 /* TextAutoCompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAutoCompleteView.swift; sourceTree = "<group>"; };
 		ADB6F0762A2E7AD7009294CF /* CoreDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataModel.swift; sourceTree = "<group>"; };
 		ADB6F0782A2E89F7009294CF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		ADB6F07F2A2F27D5009294CF /* MaterialButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialButton.swift; sourceTree = "<group>"; };
@@ -387,6 +389,7 @@
 				ADB6F0832A2F29A6009294CF /* MaterialFabButton.swift */,
 				AD8E228F2A437778009AD822 /* CardCountRecord.swift */,
 				AD8E22912A437839009AD822 /* InsectDetailCard.swift */,
+				ADACB2032A608EC2009B02D4 /* TextAutoCompleteView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -612,6 +615,7 @@
 				ADD4A4882A3024C3000A3BE5 /* EntomologistViewModel.swift in Sources */,
 				AD642A962A3C14E900181622 /* MockDataSource.swift in Sources */,
 				ADA563D82A4DDF44009595B1 /* CountRecordModel.swift in Sources */,
+				ADACB2042A608EC2009B02D4 /* TextAutoCompleteView.swift in Sources */,
 				AD642A8A2A32D9CE00181622 /* CountRecord.swift in Sources */,
 				AD58CFD02A26523200154EDF /* Entomology.xcdatamodeld in Sources */,
 				AD58CFCD2A26523200154EDF /* CoreDataProvider.swift in Sources */,
