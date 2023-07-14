@@ -35,4 +35,11 @@ extension Insect: Model {
 		request.sortDescriptors = []
 		return request
 	}
+	
+	static func searchByName(searchTerm: String) -> NSFetchRequest<Insect> {
+		let request = Insect.fetchRequest()
+		request.sortDescriptors = [NSSortDescriptor(key: "speciesName", ascending: false)]
+		request.predicate = NSPredicate(format: "speciesName == %@", searchTerm)
+		return request
+	}
 }
