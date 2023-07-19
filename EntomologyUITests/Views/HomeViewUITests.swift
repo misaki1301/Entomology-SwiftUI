@@ -107,7 +107,7 @@ final class HomeViewUITests: XCTestCase {
 			predicate: NSPredicate(format: "exists == false"),
 			object: splashScreen
 		)
-		let resultSplash = XCTWaiter.wait(for: [splashScreenDisappeared], timeout: 2.5)
+		_ = XCTWaiter.wait(for: [splashScreenDisappeared], timeout: 2.5)
 		
 		// Continue with your assertions and tests
 		XCTAssert(true)

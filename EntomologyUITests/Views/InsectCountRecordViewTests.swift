@@ -124,8 +124,7 @@ final class InsectCountRecordViewTests: XCTestCase {
 		navLinkRecord.tap()
 		
 		//get button fab for adding values to label
-		let fabPlus = app.buttons["fab_plus"]
-		//check in insectCountRecordView
+		let fabPlus = app.otherElements.buttons["fab_plus"]
 		let counterText = app.staticTexts["counter_text"]
 		XCTAssertTrue(counterText.waitForExistence(timeout: 5), "Check failed for label existance")
 		XCTAssertTrue(fabPlus.waitForExistence(timeout: 3), "the button does not exists")
