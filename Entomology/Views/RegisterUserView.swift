@@ -12,6 +12,7 @@ struct RegisterUserView: View {
 	@EnvironmentObject var locationViewModel: LocationViewModel
 	@EnvironmentObject var entomologistViewModel: EntomologistViewModel
 	@EnvironmentObject var viewRouter: ViewRouter
+	
 	@State private var isEditing: Bool = false
 	@State private var username: String = ""
 	// @State private var locationPermission: Bool = false
@@ -20,10 +21,8 @@ struct RegisterUserView: View {
 	@State private var alertVisible = false
 
 	private func saveEntomologist() {
-		do {
 			let entomologist = Entomologist(context: viewContext)
 			entomologist.geoLocate = "Desconocido"
-			print(locationViewModel.currentPlacemark?.locality)
 			if let currentPlacemark = locationViewModel.currentPlacemark {
 				entomologist.geoLocate = currentPlacemark.locality
 			}
@@ -31,9 +30,6 @@ struct RegisterUserView: View {
 			entomologist.urlPhoto = profileImage.pngData()
 			entomologistViewModel.saveEntomologist(for: entomologist)
 			viewRouter.currentPage = .homePage
-		} catch {
-			print("error saving entomologist: \(error)")
-		}
 	}
 
 	var body: some View {
@@ -67,7 +63,6 @@ struct RegisterUserView: View {
 						.onTapGesture {
 							//locationViewModel.isPermissionActive.toggle()
 							locationViewModel.requestPermission()
-							print("LOCATION \(locationViewModel.isPermissionActive)")
 							if locationViewModel.authorizationStatus == .denied || locationViewModel.authorizationStatus == .restricted {
 								alertVisible = true
 							}

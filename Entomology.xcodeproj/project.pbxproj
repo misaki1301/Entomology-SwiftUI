@@ -11,6 +11,9 @@
 		AD1B9F152A5E4103004582B5 /* Inspectable+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1B9F142A5E4103004582B5 /* Inspectable+Model.swift */; };
 		AD48C0232A55AF53001BBE95 /* LocationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD48C0222A55AF53001BBE95 /* LocationViewModelTests.swift */; };
 		AD48C0252A55D32A001BBE95 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AD48C0242A55D32A001BBE95 /* Settings.bundle */; };
+		AD4EF6052A618F9600B14355 /* InsectDetailViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4EF6042A618F9600B14355 /* InsectDetailViewTests.swift */; };
+		AD4EF6082A6729BC00B14355 /* CreateInsectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4EF6072A6729BC00B14355 /* CreateInsectView.swift */; };
+		AD4EF60A2A6731A700B14355 /* CircleImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4EF6092A6731A700B14355 /* CircleImagePicker.swift */; };
 		AD517A6A2A2AC12800BDC415 /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD517A692A2AC12800BDC415 /* LocationViewModel.swift */; };
 		AD58CFC42A26522F00154EDF /* EntomologyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD58CFC32A26522F00154EDF /* EntomologyApp.swift */; };
 		AD58CFC62A26522F00154EDF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD58CFC52A26522F00154EDF /* ContentView.swift */; };
@@ -93,6 +96,9 @@
 		AD1B9F142A5E4103004582B5 /* Inspectable+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Inspectable+Model.swift"; sourceTree = "<group>"; };
 		AD48C0222A55AF53001BBE95 /* LocationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModelTests.swift; sourceTree = "<group>"; };
 		AD48C0242A55D32A001BBE95 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		AD4EF6042A618F9600B14355 /* InsectDetailViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsectDetailViewTests.swift; sourceTree = "<group>"; };
+		AD4EF6072A6729BC00B14355 /* CreateInsectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateInsectView.swift; sourceTree = "<group>"; };
+		AD4EF6092A6731A700B14355 /* CircleImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImagePicker.swift; sourceTree = "<group>"; };
 		AD517A692A2AC12800BDC415 /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
 		AD58CFC02A26522F00154EDF /* Entomology.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Entomology.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD58CFC32A26522F00154EDF /* EntomologyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntomologyApp.swift; sourceTree = "<group>"; };
@@ -183,6 +189,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD4EF6062A65841B00B14355 /* InsectForm */ = {
+			isa = PBXGroup;
+			children = (
+				AD642A852A32742700181622 /* InsectFormView.swift */,
+				AD4EF6072A6729BC00B14355 /* CreateInsectView.swift */,
+			);
+			path = InsectForm;
+			sourceTree = "<group>";
+		};
 		AD517A682A2AC11800BDC415 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -253,6 +268,7 @@
 				AD48C0222A55AF53001BBE95 /* LocationViewModelTests.swift */,
 				ADF53ACE2A5DDFE100ACA1A9 /* InsectCountRecordViewTests.swift */,
 				AD1B9F142A5E4103004582B5 /* Inspectable+Model.swift */,
+				AD4EF6042A618F9600B14355 /* InsectDetailViewTests.swift */,
 			);
 			path = EntomologyTests;
 			sourceTree = "<group>";
@@ -313,11 +329,11 @@
 				AD58D0132A26618400154EDF /* Extensions */,
 				ADB6F07A2A2F278B009294CF /* Components */,
 				AD58D00F2A26591500154EDF /* SplashView.swift */,
+				AD4EF6062A65841B00B14355 /* InsectForm */,
 				AD58D0172A26B40C00154EDF /* RegisterUserView.swift */,
 				AD58D0192A27E40100154EDF /* UserProfileImageView.swift */,
 				ADB6F0782A2E89F7009294CF /* HomeView.swift */,
 				ADD4A4852A300D1B000A3BE5 /* InsectDetailView.swift */,
-				AD642A852A32742700181622 /* InsectFormView.swift */,
 				AD642A8B2A330A9A00181622 /* InsectCountRecordView.swift */,
 			);
 			path = Views;
@@ -390,6 +406,7 @@
 				AD8E228F2A437778009AD822 /* CardCountRecord.swift */,
 				AD8E22912A437839009AD822 /* InsectDetailCard.swift */,
 				ADACB2032A608EC2009B02D4 /* TextAutoCompleteView.swift */,
+				AD4EF6092A6731A700B14355 /* CircleImagePicker.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -627,6 +644,7 @@
 				AD58D0262A29791E00154EDF /* Entomologist.swift in Sources */,
 				AD642A882A3277BD00181622 /* PhotoSource.swift in Sources */,
 				AD642A8C2A330A9A00181622 /* InsectCountRecordView.swift in Sources */,
+				AD4EF60A2A6731A700B14355 /* CircleImagePicker.swift in Sources */,
 				AD8E22902A437778009AD822 /* CardCountRecord.swift in Sources */,
 				AD58CFC42A26522F00154EDF /* EntomologyApp.swift in Sources */,
 				AD58D0212A28FF8100154EDF /* ViewRouter.swift in Sources */,
@@ -634,6 +652,7 @@
 				AD58D01C2A27F57400154EDF /* ImagePicker.swift in Sources */,
 				ADB6F0772A2E7AD7009294CF /* CoreDataModel.swift in Sources */,
 				AD8E22922A437839009AD822 /* InsectDetailCard.swift in Sources */,
+				AD4EF6082A6729BC00B14355 /* CreateInsectView.swift in Sources */,
 				ADB6F0842A2F29A6009294CF /* MaterialFabButton.swift in Sources */,
 				ADB6F0802A2F27D5009294CF /* MaterialButton.swift in Sources */,
 				AD58D01A2A27E40100154EDF /* UserProfileImageView.swift in Sources */,
@@ -651,6 +670,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD1B9F152A5E4103004582B5 /* Inspectable+Model.swift in Sources */,
+				AD4EF6052A618F9600B14355 /* InsectDetailViewTests.swift in Sources */,
 				ADF53ACF2A5DDFE100ACA1A9 /* InsectCountRecordViewTests.swift in Sources */,
 				AD48C0232A55AF53001BBE95 /* LocationViewModelTests.swift in Sources */,
 			);
@@ -822,7 +842,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -859,7 +879,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
