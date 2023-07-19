@@ -54,7 +54,6 @@ struct InsectDetailView_Previews: PreviewProvider {
 		insect.urlPhoto = "https://static.wikia.nocookie.net/agustin-sepulveda-fanon/images/7/7b/Abeja.png/revision/latest/thumbnail/width/360/height/360?cb=20180620011627&path-prefix=es"
 		let coordinates = CLLocationCoordinate2D(latitude: 35.30487705019497, longitude: 139.48254879527659)
 		let span = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
-		let region = MKCoordinateRegion(center: coordinates, span: span)
 		let locate = GeoLocate(context: CoreDataProvider.preview.viewContext)
 		locate.latitude = 35.30487705019497
 		locate.longitude = 139.48254879527659

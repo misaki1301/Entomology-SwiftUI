@@ -45,7 +45,7 @@ struct InsectCountRecordView: View {
 						.lineLimit(1)
 						.foregroundColor(Color("font_label_primary"))
 					HStack(spacing: 48) {
-						MaterialFabButton(action: incrementCount, icon: "minus", color: "fab_minus_background")
+						MaterialFabButton(action: decrementCount, icon: "minus", color: "fab_minus_background")
 							.accessibilityIdentifier("fab_minus")
 						MaterialFabButton(action: incrementCount, icon: "plus")
 							.accessibilityIdentifier("fab_plus")
@@ -56,17 +56,28 @@ struct InsectCountRecordView: View {
 				.padding(.bottom, 46)
 				if count > 0 {
 					VStack {
-						TextEditor(text: $comment)
-							.scrollContentBackground(.hidden)
-							.background(Color.white)
-							.lineLimit(3)
-							.textFieldStyle(MaterialTextFieldStyle(isEditing: isEditing))
-							.frame(height: 184)
-							.cornerRadius(16)
-							.foregroundColor(Color("font_label_primary")).padding(.horizontal, 18)
-							.padding(.bottom, 46)
-						MaterialButton(text: "Guardar", action: saveToEntomologist)
-					}
+						if #available(iOS 16, *) {
+							TextEditor(text: $comment)
+								.scrollContentBackground(.hidden)
+								.background(Color.white)
+								.lineLimit(3)
+								.textFieldStyle(MaterialTextFieldStyle(isEditing: isEditing))
+								.frame(height: 184)
+								.cornerRadius(16)
+								.foregroundColor(Color("font_label_primary")).padding(.horizontal, 18)
+								.padding(.bottom, 46)
+						} else {
+							TextEditor(text: $comment)
+								.background(Color.white)
+								.lineLimit(3)
+								.textFieldStyle(MaterialTextFieldStyle(isEditing: isEditing))
+								.frame(height: 184)
+								.cornerRadius(16)
+								.foregroundColor(Color("font_label_primary"))
+								.padding(.horizontal, 18)
+								.padding(.bottom, 46)
+						}}
+					MaterialButton(text: "Guardar", action: saveToEntomologist)
 				} else {
 					Spacer(minLength: 282)
 				}
@@ -87,10 +98,12 @@ struct InsectCountRecordView: View {
 	}
 
 	private func incrementCount() {
+		count += 1
+	}
+	
+	private func decrementCount() {
 		if count >= 1 {
 			count -= 1
-		} else {
-			count += 1
 		}
 	}
 	
