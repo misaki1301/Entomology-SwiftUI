@@ -41,6 +41,19 @@ final class InsectCountRecordViewTests: XCTestCase {
 		XCTAssertTrue(navLink.waitForExistence(timeout: 5))
 		
 		navLink.tap()
+		//let textcomplete = app.otherElements.collectionViews["text_autocomplete_insects"]
+		//textcomplete.tap()
+		//let textField = app.textFields.matching(identifier: "text_autocomplete").element
+		let holder = app.otherElements["textfield_holder_insect"]
+		XCTAssertTrue(holder.waitForExistence(timeout: 5), "No existe el holder de los inputs")
+		let textField = app.descendants(matching: .other).element(boundBy: 2)
+		//let textField = app.otherElements.firstMatch
+		textField.tap()
+			textField.typeText("Hello, World!")
+		XCTAssertTrue(textField.waitForExistence(timeout: 5))
+		textField.typeText("abej")
+		
+		
 		
 		let expectedView = app.staticTexts["InsectFormView"]
 		
