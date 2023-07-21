@@ -13,10 +13,11 @@ struct InsectCountRecordView: View {
 	@EnvironmentObject var entomologistViewModel: EntomologistViewModel
 	@EnvironmentObject var locationViewModel: LocationViewModel
 	internal let inspection = Inspection<Self>()
-	@State var name = "Especie"
-	@State var image = UIImage(named: "ant")!
+	//@State var name = "Especie"
+	//@State var image = UIImage(named: "ant")!
+	var insect: Insect?
 	@State var count = 0
-	@State var url = ""
+	//@State var url = ""
 	@State var comment = ""
 	@State private var isEditing = false
 
@@ -37,10 +38,10 @@ struct InsectCountRecordView: View {
 				}.background(Color("counter_background"))
 					.cornerRadius(8)
 				HStack(spacing: 16) {
-					Image(uiImage: image)
+					Image(uiImage: UIImage(data: (insect?.localePhoto!)!)!)
 						.resizable()
 						.scaledToFit()
-					Text("\(name)")
+					Text("\(insect?.speciesName ?? "")")
 						.font(.custom("Roboto-Regular", size: 16))
 						.lineLimit(1)
 						.foregroundColor(Color("font_label_primary"))
@@ -111,11 +112,11 @@ struct InsectCountRecordView: View {
 		do {
 			let lastSeenLocation = locationViewModel.lastSeenLocation
 			let place = locationViewModel.currentPlacemark
-			let insect1 = Insect(context: viewContext)
-			insect1.geoLocate = "\(place?.locality ?? "Unknown city"), \(place?.country ?? "Unknown country")"
-			insect1.moreInfoUrl = url
-			insect1.speciesName = name
-			insect1.localePhoto = image.pngData()
+			//let insect1 = Insect(context: viewContext)
+			insect?.locate = "\(place?.locality ?? "Unknown city"), \(place?.country ?? "Unknown country")"
+			//insect1.moreInfoUrl = url
+			//insect1.speciesName = name
+			//insect1.localePhoto = image.pngData()
 			// try viewContext.save()
 			let locate = GeoLocate(context: viewContext)
 			locate.latitude = lastSeenLocation?.coordinate.latitude ?? 0
@@ -126,7 +127,7 @@ struct InsectCountRecordView: View {
 			newRecord.createdAt = Date()
 			newRecord.entomologist = entomologistViewModel.currentEntomologist
 			newRecord.location = "\(place?.locality ?? "Unknown city"), \(place?.country ?? "Unknown country")"
-			newRecord.insect = insect1
+			newRecord.insect = insect
 			newRecord.geolocate = locate
 			try viewContext.save()
 			entomologistViewModel.getUser()
@@ -140,7 +141,9 @@ struct InsectCountRecordView: View {
 
 struct InsectCountRecordView_Previews: PreviewProvider {
 	static var previews: some View {
-		InsectCountRecordView()
+		let insect = Insect(context: CoreDataProvider.preview.viewContext)
+		insect.localePhoto = UIImage(named: "ant")?.pngData()
+		return InsectCountRecordView(insect: insect)
 			.environmentObject(ViewRouter())
 			.environmentObject(EntomologistViewModel())
 			.environmentObject(LocationViewModel())

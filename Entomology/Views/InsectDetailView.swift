@@ -9,6 +9,7 @@ import MapKit
 import SwiftUI
 
 struct InsectDetailView: View {
+	internal let inspection = Inspection<Self>()
 	@State var record: CountRecord
 	@State private var region: MKCoordinateRegion
 	
@@ -24,6 +25,7 @@ struct InsectDetailView: View {
 			InsectDetailCard(
 				name: record.insect?.speciesName ?? "",
 				count: record.count,
+				image: record.insect?.localePhoto,
 				imageUrl: record.insect?.urlPhoto ?? "",
 				url: record.insect?.moreInfoUrl ?? "",
 				createdAt: record.createdAt,
@@ -37,6 +39,9 @@ struct InsectDetailView: View {
 		}.onAppear {
 			let coordinate = CLLocationCoordinate2D(latitude: record.geolocate?.latitude ?? 0, longitude: record.geolocate?.longitude ?? 0)
 			region = MKCoordinateRegion(center: coordinate, span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
+		}
+		.onReceive(inspection.notice) {
+			self.inspection.visit(self, $0)
 		}
 		.backgroundColor(Color("background"))
 	}

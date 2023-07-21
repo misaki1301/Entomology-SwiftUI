@@ -41,23 +41,28 @@ extension View {
 	}
 }
 
-struct TextAutoCompleteView: View {
+struct TextAutoComplete: View {
 	@FetchRequest
 	private var insects: FetchedResults<Insect>
 	
 	@Binding var text: String
 	@Binding var selected: Insect?
+	@Binding var isFocused: Bool
+	@Binding var showSheet: Bool
 	@State private var isAnimated = false
 	
-	init(text: Binding<String>, selected: Binding<Insect?>) {
+	init(text: Binding<String>, selected: Binding<Insect?>, showSheet: Binding<Bool>, isFocused: Binding<Bool>) {
 		self._selected = selected
 		self._text = text
+		self._showSheet = showSheet
+		self._isFocused = isFocused
 		_insects = FetchRequest(fetchRequest: Insect.searchByName(searchTerm: text.wrappedValue))
 	}
 
 	var body: some View {
 		ZStack(alignment: .top) {
-			TextField("Nombre de la especie", text: $text)
+			TextField("Nombre de la especie", text: $text, onEditingChanged: { isFocused = $0 })
+				.accessibilityIdentifier("text_autocomplete")
 				.frame(width: 200, height: 56)
 				.padding(.horizontal, 16)
 				.clearButton(text: $text)
@@ -67,13 +72,19 @@ struct TextAutoCompleteView: View {
 					.stroke(Color(red: 0, green: 0.43, blue: 0.19), lineWidth: 2)
 				}
 				.overlay(alignment: .topLeading) {
-					VStack {
-						LazyVStack(alignment: .leading, spacing: 0) {
-							ForEach(insects, id: \.self) { item in
-								MenuItem(text: item.speciesName ?? "")
-							}
-							NavigationLink(destination: CreateInsectView()) {
-								MenuItem(text: "Otro")
+					if isFocused && !text.isEmpty {
+						VStack {
+							LazyVStack(alignment: .leading, spacing: 0) {
+								ForEach(insects, id: \.self) { item in
+									MenuItem(text: item.speciesName ?? "")
+										.onTapGesture {
+											selected = item
+											text = selected?.speciesName ?? ""
+										}
+								}
+								MenuItem(text: "Otro").onTapGesture {
+									showSheet.toggle()
+								}
 							}
 						}
 						.frame(width: 232)
@@ -83,6 +94,8 @@ struct TextAutoCompleteView: View {
 						.offset(x: 0, y: 56)
 						.zIndex(200)
 						.opacity((!text.isEmpty || !insects.isEmpty) ? 1 : 0)
+						}
+						
 					}.onAppear {
 						withAnimation(isAnimated ? .easeIn : .easeOut) {
 							self.isAnimated.toggle()
@@ -91,13 +104,12 @@ struct TextAutoCompleteView: View {
 				}
 				.zIndex(200)
 			}
-	}
 }
 
 struct TextAutoCompleteView_Previews: PreviewProvider {
 	static var previews: some View {
 		let context = CoreDataProvider.preview.persistentContainer.viewContext
-		TextAutoCompleteView(text: .constant("mor"), selected: .constant(Insect(context: context)))
+		TextAutoComplete(text: .constant("mor"), selected: .constant(Insect(context: context)), showSheet: .constant(false), isFocused: .constant(false))
 			.backgroundColor(Color("background"))
 			.environment(\.managedObjectContext, CoreDataProvider.preview.persistentContainer.viewContext)
 	}
