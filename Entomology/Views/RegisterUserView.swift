@@ -22,9 +22,9 @@ struct RegisterUserView: View {
 
 	private func saveEntomologist() {
 			let entomologist = Entomologist(context: viewContext)
-			entomologist.geoLocate = "Desconocido"
+			entomologist.locate = "Desconocido"
 			if let currentPlacemark = locationViewModel.currentPlacemark {
-				entomologist.geoLocate = currentPlacemark.locality
+				entomologist.locate = currentPlacemark.locality
 			}
 			entomologist.name = username
 			entomologist.urlPhoto = profileImage.pngData()

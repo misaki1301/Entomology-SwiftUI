@@ -9,6 +9,8 @@ import SwiftUI
 
 struct InsectFormView: View {
 	@EnvironmentObject var viewRouter: ViewRouter
+	
+	@State private var showSheetCreateInsect = false
 	@State private var showOptions = false
 	@State private var image = UIImage(named: "ant")!
 	@State private var name = ""
@@ -17,34 +19,52 @@ struct InsectFormView: View {
 	@State private var isEditingUrl = false
 	@State private var goToNext = false
 	@State private var selectedInsect: Insect?
+	@State private var newInsect: Insect?
+	
 	var body: some View {
 		VStack {
 			Spacer()
-			//CircleImagePicker(showPhotoOptions: $showOptions, imageProfile: $image, isClickable: true)
-			Image(uiImage: image)
+			if let newInsect = newInsect {
+				Image(uiImage: UIImage(data: newInsect.localePhoto!)!)
+					.resizable()
+					.scaledToFill()
+					.frame(width: 120, height: 120)
+			} else if let selectedInsect = selectedInsect {
+				Image(uiImage: UIImage(data: selectedInsect.localePhoto!)!)
+					.resizable()
+					.scaledToFill()
+					.frame(width: 120, height: 120)
+			} else {
+				Image(uiImage: image)
+					.resizable()
+					.scaledToFill()
+					.frame(width: 120, height: 120)
+			}
 			VStack(alignment: .leading) {
 				Text("Nombre")
 					.padding(.leading, 34)
 					.foregroundColor(Color("font_label_primary"))
-				TextAutoCompleteView(text: $name, selected: $selectedInsect)
-					.overlay {
-						Rectangle().stroke(Color.red)
-					}
-					.zIndex(200)
+				TextAutoComplete(text: $name, selected: $selectedInsect, showSheet: $showSheetCreateInsect, isFocused: $isEditingName)
+					.accessibilityIdentifier("text_autocomplete_insects")
+					.zIndex(100)
 				Text("Información adicional")
 					.padding(.leading, 34)
 					.foregroundColor(Color("font_label_primary"))
-					.zIndex(-200)
+					.zIndex(0)
 				TextField("URL", text: $url, onEditingChanged: { isEditingUrl = $0 })
 					.textFieldStyle(MaterialTextFieldStyle(isEditing: isEditingUrl))
+					.zIndex(0)
 			}
+			.accessibilityIdentifier("textfield_holder_insect")
 			Spacer()
-			NavigationLink(destination: InsectCountRecordView(name: name, image: image, url: url), isActive: $goToNext, label: {
+			NavigationLink(destination: InsectCountRecordView(insect: (newInsect ?? selectedInsect)), isActive: $goToNext) {
 				MaterialButton(id: "select_insect_button", text: "Seleccionar", action: { goToNext.toggle() })
-			})
+			}
 			.isDetailLink(false)
 			.disabled(name.isEmpty)
-			Spacer()
+		}
+		.sheet(isPresented: $showSheetCreateInsect) {
+			CreateInsectView(newInsect: $newInsect)
 		}
 		.accessibilityIdentifier("InsectFormView")
 		.frame(maxHeight: .infinity)
