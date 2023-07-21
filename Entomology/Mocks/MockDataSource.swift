@@ -46,34 +46,34 @@ class MockDataSource {
 
 	func createInsects() throws {
 		let insect1 = Insect(context: context)
-		insect1.geoLocate = "Lima, Peru"
+		insect1.locate = "Lima, Peru"
 		insect1.moreInfoUrl = "https://es.wikipedia.org/wiki/Anthophila"
 		insect1.speciesName = "Abeja"
 		insect1.urlPhoto = "https://static.wikia.nocookie.net/agustin-sepulveda-fanon/images/7/7b/Abeja.png/revision/latest/thumbnail/width/360/height/360?cb=20180620011627&path-prefix=es"
 		let insect2 = Insect(context: context)
-		insect2.geoLocate = "Lima, Peru"
+		insect2.locate = "Lima, Peru"
 		insect2.moreInfoUrl = "https://es.wikipedia.org/wiki/Morpho"
 		insect2.speciesName = "Morpho"
 		insect2.urlPhoto = "https://media.istockphoto.com/id/182509255/es/foto/celeste-com%C3%BAn-grande.jpg?s=612x612&w=0&k=20&c=MiKwWOmLfbIcVTYkyDU4i-NTvZTZ6IflrOQLR8pwVpc="
 		let insect3 = Insect(context: context)
-		insect3.geoLocate = "Miami, USA"
+		insect3.locate = "Miami, USA"
 		insect3.moreInfoUrl = ""
 		insect3.speciesName = "Lombriz de tierra"
 		insect3.urlPhoto = "https://img.freepik.com/fotos-premium/lombriz-tierra-aislado-blanco_360917-968.jpg"
 		let insect4 = Insect(context: context)
-		insect4.geoLocate = "Lima, Peru"
+		insect4.locate = "Lima, Peru"
 		insect4.moreInfoUrl = "https://es.wikipedia.org/wiki/Anthophila"
-		insect4.speciesName = "Abeja"
+		insect4.speciesName = "Abeja1"
 		insect4.urlPhoto = "https://static.wikia.nocookie.net/agustin-sepulveda-fanon/images/7/7b/Abeja.png/revision/latest/thumbnail/width/360/height/360?cb=20180620011627&path-prefix=es"
 		let insect5 = Insect(context: context)
-		insect5.geoLocate = "Lima, Peru"
+		insect5.locate = "Lima, Peru"
 		insect5.moreInfoUrl = "https://es.wikipedia.org/wiki/Anthophila"
-		insect5.speciesName = "Abeja"
+		insect5.speciesName = "Abeja2"
 		insect5.urlPhoto = "https://static.wikia.nocookie.net/agustin-sepulveda-fanon/images/7/7b/Abeja.png/revision/latest/thumbnail/width/360/height/360?cb=20180620011627&path-prefix=es"
 		let insect6 = Insect(context: context)
-		insect6.geoLocate = "Lima, Peru"
+		insect6.locate = "Lima, Peru"
 		insect6.moreInfoUrl = "https://es.wikipedia.org/wiki/Anthophila"
-		insect6.speciesName = "Abeja"
+		insect6.speciesName = "Abeja3"
 		insect6.urlPhoto = "https://static.wikia.nocookie.net/agustin-sepulveda-fanon/images/7/7b/Abeja.png/revision/latest/thumbnail/width/360/height/360?cb=20180620011627&path-prefix=es"
 		try context.save()
 	}

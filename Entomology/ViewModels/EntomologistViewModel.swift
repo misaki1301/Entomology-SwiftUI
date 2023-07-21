@@ -10,7 +10,7 @@ import Foundation
 class EntomologistViewModel: ObservableObject {
 	@Published var currentEntomologist: Entomologist?
 	#if DEBUG
-	private var context = (UITestingHelper.isInPreview || UITestingHelper.isUITesting) ? CoreDataProvider.preview.viewContext : CoreDataProvider.shared.viewContext
+	private var context = CoreDataProvider.currentContext
 	#else
 	private var context = UITestingHelper.isUITesting ? CoreDataProvider.preview.viewContext : CoreDataProvider.shared.viewContext
 	#endif
@@ -48,7 +48,7 @@ class EntomologistViewModel: ObservableObject {
 			let entomologist = Entomologist(context: context)
 			entomologist.name = entity.name
 			entomologist.urlPhoto = entity.urlPhoto
-			entomologist.geoLocate = entity.geoLocate
+			entomologist.locate = entity.locate
 			try entomologist.save()
 			currentEntomologist = entomologist
 			AppData.defaultUserId = entomologist.objectID.uriRepresentation().absoluteString
