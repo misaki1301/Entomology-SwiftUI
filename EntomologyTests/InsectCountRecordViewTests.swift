@@ -17,11 +17,15 @@ final class InsectCountRecordViewTests: XCTestCase {
 
 	
 	func testParamsPassedExists() throws {
-		// let context = CoreDataProvider.preview.persistentContainer.viewContext
-		let view = InsectCountRecordView(name: "desconocido", image: UIImage(named: "ant")!, count: 20, url: "", comment: "XD")
+		let context = CoreDataProvider.currentContext
+		let insect = Insect(context: context)
+		insect.speciesName = "desconocido"
+		insect.localePhoto = UIImage(named: "ant")?.pngData()
+		insect.moreInfoUrl = ""
+	let view = InsectCountRecordView(insect: insect, count: 20,comment: "XD")
 		
 		let expectation = view.inspection.inspect { item in
-			XCTAssertEqual(view.name, "desconocido")
+			XCTAssertEqual(view.insect?.speciesName, "desconocido")
 			XCTAssertEqual(view.count, 20)
 			XCTAssertEqual(view.comment, "XD")
 		}
@@ -32,23 +36,31 @@ final class InsectCountRecordViewTests: XCTestCase {
 	}
 	
 	func testSaveToEntomologist() throws {
-		let context = CoreDataProvider.preview.persistentContainer.viewContext
-		let view = InsectCountRecordView(name: "desconocido", image: UIImage(named: "ant")!, count: 20, url: "", comment: "XD")
+		let context = CoreDataProvider.currentContext
+		let insect = Insect(context: context)
+		insect.speciesName = "desconocido"
+		insect.localePhoto = UIImage(named: "ant")?.pngData()
+		insect.moreInfoUrl = ""
+		
+		let view = InsectCountRecordView(insect: insect, count: 20, comment: "XD")
 		
 		let expectation = view.inspection.inspect { v in
-			XCTAssertEqual(try v.actualView().name, "desconocido")
+			XCTAssertEqual(try v.actualView().insect?.speciesName, "desconocido")
 			XCTAssertEqual(try v.actualView().count, 20)
 			XCTAssertEqual(try v.actualView().comment, "XD")
-			XCTAssertEqual(try v.actualView().url, "")
-			XCTAssertNotNil(try v.actualView().image, "the image is nil")
+			XCTAssertEqual(try v.actualView().insect?.moreInfoUrl, "")
+			XCTAssertNotNil(try v.actualView().insect?.localePhoto, "the image is nil")
 			let button = try v.find(button: "Guardar")
 			try button.tap()
 			let records = try context.fetch(CountRecord.getByDate())
 			XCTAssertEqual(try v.actualView().count, records.first?.count)
-			XCTAssertEqual(try v.actualView().name, records.first?.insect?.speciesName)
+			XCTAssertEqual(try v.actualView().insect?.speciesName, records.first?.insect?.speciesName)
 		}
 		
-		ViewHosting.host(view: view.environmentObject(LocationViewModel()).environmentObject(ViewRouter()).environmentObject(EntomologistViewModel()).environment(\.managedObjectContext, context))
+		ViewHosting.host(view: view
+			.environmentObject(LocationViewModel())
+			.environmentObject(ViewRouter()).environmentObject(EntomologistViewModel())
+			.environment(\.managedObjectContext, context))
 		
 		
 		self.wait(for: [expectation], timeout: 1.5)
