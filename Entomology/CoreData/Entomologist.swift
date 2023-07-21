@@ -17,7 +17,7 @@ public class Entomologist: NSManagedObject {
 public extension Entomologist {
 	@NSManaged var name: String?
 	@NSManaged var urlPhoto: Data?
-	@NSManaged var geoLocate: String?
+	@NSManaged var locate: String?
 	@NSManaged var countRecords: NSSet?
 	@nonobjc class func fetchRequest() -> NSFetchRequest<Entomologist> {
 		return NSFetchRequest<Entomologist>(entityName: "Entomologist")

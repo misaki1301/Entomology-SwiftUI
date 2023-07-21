@@ -16,6 +16,8 @@ class CoreDataProvider {
 	var viewContext: NSManagedObjectContext {
 		persistentContainer.viewContext
 	}
+	
+	static let currentContext = (UITestingHelper.isInPreview || UITestingHelper.isUITesting) ? CoreDataProvider.preview.viewContext : CoreDataProvider.shared.viewContext
 
 	// A test configuration for SwiftUI previews
 	static var preview: CoreDataProvider = {

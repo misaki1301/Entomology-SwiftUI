@@ -19,7 +19,7 @@ extension Insect {
 	@NSManaged var speciesName: String?
 	@NSManaged var urlPhoto: String?
 	@NSManaged var localePhoto: Data?
-	@NSManaged var geoLocate: String?
+	@NSManaged var locate: String?
 	@NSManaged var moreInfoUrl: String?
 	@NSManaged var countRecords: NSSet?
 	@nonobjc public class func fetchRequest() -> NSFetchRequest<Insect> {
