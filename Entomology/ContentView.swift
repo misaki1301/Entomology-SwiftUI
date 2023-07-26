@@ -16,7 +16,7 @@ struct ContentView: View {
 		let isDebug = true
 		let userId = !(UITestingHelper.isUITesting || UITestingHelper.isInPreview) ? AppData.defaultUserId : AppData.defaultTestUserId
 		#else
-		var isDebug = false
+		let isDebug = false
 		let userId = AppData.defaultUserId
 		#endif
 		ZStack {
@@ -32,15 +32,19 @@ struct ContentView: View {
 			}
 		}.onAppear {
 			DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
-				withAnimation {
-					if userId.isEmpty {
-						print("isDEBUG \(isDebug) \n \(UITestingHelper.isUITesting)")
-						viewRouter.currentPage = .signUpPage
-					} else {
-						print("isDEBUG \(isDebug) \n \(UITestingHelper.isUITesting) \n User is not Empty")
-						viewRouter.currentPage = .homePage
-					}
-				}
+				redirectTo(userId: userId, isDebug: isDebug)
+			}
+		}
+	}
+	
+	private func redirectTo(userId: String, isDebug: Bool) {
+		withAnimation {
+			if userId.isEmpty {
+				print("isDEBUG \(isDebug) \n \(UITestingHelper.isUITesting)")
+				viewRouter.currentPage = .signUpPage
+			} else {
+				print("isDEBUG \(isDebug) \n \(UITestingHelper.isUITesting) \n User is not Empty")
+				viewRouter.currentPage = .homePage
 			}
 		}
 	}

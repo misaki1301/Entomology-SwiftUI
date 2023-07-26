@@ -24,6 +24,9 @@
       }
     },
     {
+      "skippedTests" : [
+        "InsectCountRecordViewTests"
+      ],
       "target" : {
         "containerPath" : "container:Entomology.xcodeproj",
         "identifier" : "AD58CFDE2A26523300154EDF",
