@@ -56,6 +56,9 @@ struct HomeView: View {
 					if showRecords {
 						VStack {
 							HStack(spacing: 16) {
+								Image(systemName: "circle.fill")
+									.font(.custom("", size: 12))
+									.foregroundColor(.black.opacity(0.8))
 								Text("Nuevo conteo")
 									.accessibilityIdentifier("new_count_label")
 									.foregroundColor(Color("font_label_primary"))

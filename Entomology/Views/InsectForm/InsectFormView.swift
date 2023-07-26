@@ -28,19 +28,22 @@ struct InsectFormView: View {
 				Image(uiImage: UIImage(data: newInsect.localePhoto!)!)
 					.resizable()
 					.scaledToFill()
+					.clipShape(Circle())
 					.frame(width: 120, height: 120)
 			} else if let selectedInsect = selectedInsect {
 				Image(uiImage: UIImage(data: selectedInsect.localePhoto!)!)
 					.resizable()
 					.scaledToFill()
+					.clipShape(Circle())
 					.frame(width: 120, height: 120)
 			} else {
 				Image(uiImage: image)
 					.resizable()
 					.scaledToFill()
+					.clipShape(Circle())
 					.frame(width: 120, height: 120)
 			}
-			VStack(alignment: .leading) {
+			VStack(alignment: .leading, spacing: 16) {
 				Text("Nombre")
 					.padding(.leading, 34)
 					.foregroundColor(Color("font_label_primary"))
@@ -66,6 +69,12 @@ struct InsectFormView: View {
 		.sheet(isPresented: $showSheetCreateInsect) {
 			CreateInsectView(newInsect: $newInsect)
 		}
+		.onChange(of: selectedInsect, perform: { newValue in
+			url = newValue?.moreInfoUrl ?? ""
+		})
+		.onChange(of: newInsect, perform: { newValue in
+			url = newValue?.moreInfoUrl ?? ""
+		})
 		.accessibilityIdentifier("InsectFormView")
 		.frame(maxHeight: .infinity)
 		.padding(42)
