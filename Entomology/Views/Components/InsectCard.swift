@@ -14,9 +14,9 @@ struct InsectCard: View {
 	var location: String
 	var imageData: Data?
 	var imageUrl: String
-	var date: Date = Date()
-	//var formatter = DateFormatter()
-	
+	var date: Date = .init()
+	// var formatter = DateFormatter()
+
 	var body: some View {
 		HStack(spacing: 16) {
 			ZStack {
@@ -52,6 +52,11 @@ struct InsectCard: View {
 		.background(Color("card_background"))
 		.cornerRadius(12)
 		.frame(height: 80)
+		.overlay(
+			RoundedRectangle(cornerRadius: 12)
+				.inset(by: 0.5)
+				.stroke(Color(red: 0.76, green: 0.79, blue: 0.75), lineWidth: 1)
+		)
 		.listRowSeparator(.hidden)
 		.listRowBackground(Color("background"))
 		.listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 16, trailing: 0))
@@ -60,14 +65,14 @@ struct InsectCard: View {
 
 struct InsectCard_Previews: PreviewProvider {
 	static var previews: some View {
-
 		InsectCard(
 			name: "Hormiga",
 			count: 3,
 			location: "Narnia",
 			imageData: nil,
 			imageUrl: "https://static01.nyt.com/images/2017/05/17/pageoneplus/17a2_video/sciencetake-bee-pollen2-superJumbo.jpg",
-			date: Date())
+			date: Date()
+		)
 		.padding(.horizontal, 26)
 	}
 }
