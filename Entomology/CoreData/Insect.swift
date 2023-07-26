@@ -7,13 +7,7 @@
 import CoreData
 import Foundation
 
-class Insect: NSManagedObject {
-	func changePhotoUrl(photo: String?) {}
-
-	func changeMoreInfoUrl(info: String?) {}
-
-	func changeGeoLocationPhoto(location: GeoLocation) {}
-}
+class Insect: NSManagedObject {}
 
 extension Insect {
 	@NSManaged var speciesName: String?
