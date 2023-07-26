@@ -6,12 +6,11 @@
 //
 
 import Foundation
-import UIKit
 import SwiftUI
+import UIKit
 
 struct ImagePicker: UIViewControllerRepresentable {
-	
-	var sourceType:UIImagePickerController.SourceType = .photoLibrary
+	var sourceType: UIImagePickerController.SourceType = .photoLibrary
 	
 	@Binding var selectedImage: UIImage
 	@Environment(\.dismiss) private var dismiss
@@ -24,9 +23,7 @@ struct ImagePicker: UIViewControllerRepresentable {
 		return imagePicker
 	}
 	
-	func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {
-		
-	}
+	func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {}
 	
 	func makeCoordinator() -> Coordinator {
 		Coordinator(parent: self)
@@ -39,7 +36,7 @@ struct ImagePicker: UIViewControllerRepresentable {
 			self.parent = parent
 		}
 		
-		func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+		func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
 			if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
 				parent.selectedImage = image
 			}

@@ -1,0 +1,35 @@
+{
+  "configurations" : [
+    {
+      "id" : "95BFDC70-5458-428F-B555-8E6C9154B9A8",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Entomology.xcodeproj",
+      "identifier" : "AD58CFBF2A26522F00154EDF",
+      "name" : "Entomology"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Entomology.xcodeproj",
+        "identifier" : "AD58CFD42A26523300154EDF",
+        "name" : "EntomologyTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Entomology.xcodeproj",
+        "identifier" : "AD58CFDE2A26523300154EDF",
+        "name" : "EntomologyUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

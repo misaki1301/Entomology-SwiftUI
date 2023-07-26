@@ -10,7 +10,7 @@ import SwiftUI
 
 struct BackgroundColorModifier: ViewModifier {
 	let backgroundColor: Color
-	
+
 	func body(content: Content) -> some View {
 		ZStack {
 			backgroundColor.edgesIgnoringSafeArea(.all)
@@ -21,11 +21,10 @@ struct BackgroundColorModifier: ViewModifier {
 
 #if canImport(UIKit)
 extension View {
-	
 	func backgroundColor(_ color: Color) -> some View {
 		modifier(BackgroundColorModifier(backgroundColor: color))
 	}
-	
+
 	func hideKeyboard() {
 		let resign = #selector(UIResponder.resignFirstResponder)
 		UIApplication.shared.sendAction(resign, to: nil, from: nil, for: nil)
