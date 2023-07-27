@@ -15,7 +15,6 @@ struct InsectCard: View {
 	var imageData: Data?
 	var imageUrl: String
 	var date: Date = .init()
-	// var formatter = DateFormatter()
 
 	var body: some View {
 		HStack(spacing: 16) {
@@ -34,16 +33,21 @@ struct InsectCard: View {
 					.foregroundColor(Color("font_label_primary"))
 					.frame(maxWidth: .infinity, alignment: .leading)
 			}.frame(maxWidth: .infinity, alignment: .leading)
-			Spacer()
+			//Spacer()
 			if let imageData {
 				Image(uiImage: UIImage(data: imageData)!)
 					.resizable()
-					.scaledToFit()
+					.scaledToFill()
+					.frame(width: 80, height: 80, alignment: .center)
+					.clipped()
+					
 			} else {
 				AsyncImage(url: URL(string: imageUrl)!) { image in
 					image.resizable()
-						.scaledToFit()
-
+						.scaledToFill()
+						.frame(width: 80, height: 80, alignment: .center)
+						.clipped()
+						
 				} placeholder: {
 					ProgressView()
 				}
@@ -51,12 +55,13 @@ struct InsectCard: View {
 		}
 		.background(Color("card_background"))
 		.cornerRadius(12)
-		.frame(height: 80)
 		.overlay(
 			RoundedRectangle(cornerRadius: 12)
 				.inset(by: 0.5)
 				.stroke(Color(red: 0.76, green: 0.79, blue: 0.75), lineWidth: 1)
 		)
+		.frame(height: 80)
+		.clipped()
 		.listRowSeparator(.hidden)
 		.listRowBackground(Color("background"))
 		.listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 16, trailing: 0))
