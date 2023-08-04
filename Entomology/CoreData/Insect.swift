@@ -54,12 +54,12 @@ extension Insect: Model {
 		return request
 	}
 	
-	static func fetchTotalCountPerInsect() -> [NSDictionary]? {
+	static func fetchTotalCountPerInsect() -> [[String: Any]]? {
 		let fetchRequest = NSFetchRequest<NSDictionary>(entityName: "Insect")
 
 		// Define the SUM expression for the CountRecord's "count" attribute
 		let sumExpression = NSExpressionDescription()
-		sumExpression.name = "total_count"
+		sumExpression.name = "totalCount"
 		sumExpression.expression = NSExpression(format: "@sum.countRecords.count")
 		sumExpression.expressionResultType = .integer32AttributeType
 
@@ -67,7 +67,7 @@ extension Insect: Model {
 		fetchRequest.propertiesToFetch = ["speciesName", "urlPhoto", "localePhoto", "locate", "moreInfoUrl", sumExpression]
 
 		// Group by the Insect entity
-		fetchRequest.propertiesToGroupBy = ["speciesName"]
+		fetchRequest.propertiesToGroupBy = ["speciesName", "urlPhoto", "localePhoto", "locate", "moreInfoUrl"]
 
 		// Specify the result format
 		fetchRequest.resultType = .dictionaryResultType
@@ -75,7 +75,7 @@ extension Insect: Model {
 		do {
 			let context = CoreDataProvider.currentContext
 			let result = try context.fetch(fetchRequest)
-			return result
+			return convertToSwiftDictionaries(from: result)
 		} catch {
 			print("Error fetching data: \(error)")
 			return nil
