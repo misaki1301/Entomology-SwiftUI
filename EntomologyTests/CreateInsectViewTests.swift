@@ -24,7 +24,7 @@ final class CreateInsectViewTests: XCTestCase {
 		let expectation = createView.inspection.inspect() { view in
 			let textfieldName = try view.find(viewWithAccessibilityIdentifier: "textfield_insect_name").textField()
 			try textfieldName.setInput("Hormiga")
-			let textfieldUrl = try view.find(viewWithAccessibilityIdentifier: "textfield_insect_url").textField().setInput("none")
+			try view.find(viewWithAccessibilityIdentifier: "textfield_insect_url").textField().setInput("none")
 			print(try view.actualView().name)
 			XCTAssertEqual(try view.actualView().name, "Hormiga", "the text name is not equal")
 			XCTAssertEqual(try view.actualView().url, "none", "the text url is not equal")
@@ -44,7 +44,7 @@ final class CreateInsectViewTests: XCTestCase {
 			let textfieldName = try view.find(viewWithAccessibilityIdentifier: "textfield_insect_name").textField()
 			try textfieldName.setInput("Hormiga")
 			try view.actualView().image = UIImage(named: "ant")!
-			let textfieldUrl = try view.find(viewWithAccessibilityIdentifier: "textfield_insect_url").textField().setInput("none")
+			try view.find(viewWithAccessibilityIdentifier: "textfield_insect_url").textField().setInput("none")
 			print(try view.actualView().name)
 			XCTAssertEqual(try view.actualView().name, "Hormiga", "the text name is not equal")
 			XCTAssertEqual(try view.actualView().url, "none", "the text url is not equal")

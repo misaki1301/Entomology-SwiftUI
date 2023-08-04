@@ -72,6 +72,9 @@
 		ADF53ACF2A5DDFE100ACA1A9 /* InsectCountRecordViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF53ACE2A5DDFE100ACA1A9 /* InsectCountRecordViewTests.swift */; };
 		ADF53AD52A5DF69300ACA1A9 /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = ADF53AD42A5DF69300ACA1A9 /* ViewInspector */; };
 		F521CFE12A6A7A390092C653 /* CreateInsectViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F521CFE02A6A7A390092C653 /* CreateInsectViewTests.swift */; };
+		F58F09442A7851B000969316 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58F09432A7851B000969316 /* Utils.swift */; };
+		F58F09472A78CD3E00969316 /* SwiftPrettyPrint in Frameworks */ = {isa = PBXBuildFile; productRef = F58F09462A78CD3E00969316 /* SwiftPrettyPrint */; };
+		F58F09972A7CD28E00969316 /* HomeViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58F09962A7CD28E00969316 /* HomeViewTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,6 +163,8 @@
 		ADF0AA252A547555009DF10F /* GeoLocate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoLocate.swift; sourceTree = "<group>"; };
 		ADF53ACE2A5DDFE100ACA1A9 /* InsectCountRecordViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsectCountRecordViewTests.swift; sourceTree = "<group>"; };
 		F521CFE02A6A7A390092C653 /* CreateInsectViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateInsectViewTests.swift; sourceTree = "<group>"; };
+		F58F09432A7851B000969316 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		F58F09962A7CD28E00969316 /* HomeViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewTests.swift; sourceTree = "<group>"; };
 		F5A3EE9B2A58DE2700A7422D /* Entomology.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Entomology.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -168,6 +173,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F58F09472A78CD3E00969316 /* SwiftPrettyPrint in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +222,7 @@
 				AD58CFD82A26523300154EDF /* EntomologyTests */,
 				AD58CFE22A26523300154EDF /* EntomologyUITests */,
 				AD58CFC12A26522F00154EDF /* Products */,
+				F58F094C2A7CC06300969316 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -265,11 +272,13 @@
 		AD58CFD82A26523300154EDF /* EntomologyTests */ = {
 			isa = PBXGroup;
 			children = (
+				F58F09482A79D65B00969316 /* Components */,
 				AD48C0222A55AF53001BBE95 /* LocationViewModelTests.swift */,
 				ADF53ACE2A5DDFE100ACA1A9 /* InsectCountRecordViewTests.swift */,
 				AD1B9F142A5E4103004582B5 /* Inspectable+Model.swift */,
 				AD4EF6042A618F9600B14355 /* InsectDetailViewTests.swift */,
 				F521CFE02A6A7A390092C653 /* CreateInsectViewTests.swift */,
+				F58F09962A7CD28E00969316 /* HomeViewTests.swift */,
 			);
 			path = EntomologyTests;
 			sourceTree = "<group>";
@@ -327,8 +336,8 @@
 			children = (
 				AD58D0132A26618400154EDF /* Extensions */,
 				ADB6F07A2A2F278B009294CF /* Components */,
-				AD58D00F2A26591500154EDF /* SplashView.swift */,
 				AD4EF6062A65841B00B14355 /* InsectForm */,
+				AD58D00F2A26591500154EDF /* SplashView.swift */,
 				AD58D0172A26B40C00154EDF /* RegisterUserView.swift */,
 				AD58D0192A27E40100154EDF /* UserProfileImageView.swift */,
 				ADB6F0782A2E89F7009294CF /* HomeView.swift */,
@@ -367,6 +376,7 @@
 			isa = PBXGroup;
 			children = (
 				AD5C03E12A3C7E3B00F3FB29 /* NSSet+Extensions.swift */,
+				F58F09432A7851B000969316 /* Utils.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -448,6 +458,20 @@
 			path = protocols;
 			sourceTree = "<group>";
 		};
+		F58F09482A79D65B00969316 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		F58F094C2A7CC06300969316 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -466,6 +490,7 @@
 			);
 			name = Entomology;
 			packageProductDependencies = (
+				F58F09462A78CD3E00969316 /* SwiftPrettyPrint */,
 			);
 			productName = Entomology;
 			productReference = AD58CFC02A26522F00154EDF /* Entomology.app */;
@@ -544,6 +569,7 @@
 			mainGroup = AD58CFB72A26522F00154EDF;
 			packageReferences = (
 				ADF53AD32A5DF69300ACA1A9 /* XCRemoteSwiftPackageReference "ViewInspector" */,
+				F58F09452A78CD3E00969316 /* XCRemoteSwiftPackageReference "SwiftPrettyPrint" */,
 			);
 			productRefGroup = AD58CFC12A26522F00154EDF /* Products */;
 			projectDirPath = "";
@@ -649,6 +675,7 @@
 				AD8E22902A437778009AD822 /* CardCountRecord.swift in Sources */,
 				AD58CFC42A26522F00154EDF /* EntomologyApp.swift in Sources */,
 				AD58D0212A28FF8100154EDF /* ViewRouter.swift in Sources */,
+				F58F09442A7851B000969316 /* Utils.swift in Sources */,
 				ADD4A4862A300D1B000A3BE5 /* InsectDetailView.swift in Sources */,
 				AD58D01C2A27F57400154EDF /* ImagePicker.swift in Sources */,
 				ADB6F0772A2E7AD7009294CF /* CoreDataModel.swift in Sources */,
@@ -673,6 +700,7 @@
 				AD1B9F152A5E4103004582B5 /* Inspectable+Model.swift in Sources */,
 				AD4EF6052A618F9600B14355 /* InsectDetailViewTests.swift in Sources */,
 				F521CFE12A6A7A390092C653 /* CreateInsectViewTests.swift in Sources */,
+				F58F09972A7CD28E00969316 /* HomeViewTests.swift in Sources */,
 				ADF53ACF2A5DDFE100ACA1A9 /* InsectCountRecordViewTests.swift in Sources */,
 				AD48C0232A55AF53001BBE95 /* LocationViewModelTests.swift in Sources */,
 			);
@@ -1021,6 +1049,14 @@
 				minimumVersion = 0.9.7;
 			};
 		};
+		F58F09452A78CD3E00969316 /* XCRemoteSwiftPackageReference "SwiftPrettyPrint" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/YusukeHosonuma/SwiftPrettyPrint";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1028,6 +1064,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = ADF53AD32A5DF69300ACA1A9 /* XCRemoteSwiftPackageReference "ViewInspector" */;
 			productName = ViewInspector;
+		};
+		F58F09462A78CD3E00969316 /* SwiftPrettyPrint */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F58F09452A78CD3E00969316 /* XCRemoteSwiftPackageReference "SwiftPrettyPrint" */;
+			productName = SwiftPrettyPrint;
 		};
 /* End XCSwiftPackageProductDependency section */
 
