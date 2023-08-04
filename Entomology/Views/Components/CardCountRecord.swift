@@ -16,9 +16,12 @@ struct CardCountRecord: View {
 	var countRecord: CountRecord
 	var body: some View {
 		ZStack {
-			NavigationLink(destination: InsectDetailView(record: countRecord)) {
+			NavigationLink(destination: InsectDetailView(record: countRecord)
+			) {
 				EmptyView()
-			}.opacity(0)
+			}
+			.isDetailLink(false)
+			.opacity(0)
 			InsectCard(name: name, count: count, location: location, imageData: localeImage, imageUrl: imageUrl)
 		}
 		.listRowBackground(Color.clear)
@@ -36,7 +39,11 @@ struct CardCountRecord_Previews: PreviewProvider {
 		insect.speciesName = "Abeja"
 		record.insect = insect
 		let localeImage = UIImage(named: "ant")?.pngData()
-		return CardCountRecord(name: insect.speciesName ?? "", count: record.count, location: "Lima, Peru", localeImage: localeImage, imageUrl: "", countRecord: record)
-			.padding(.horizontal, 26)
+		return NavigationView {
+			VStack {
+				CardCountRecord(name: insect.speciesName ?? "", count: record.count, location: "Lima, Peru", localeImage: localeImage, imageUrl: "", countRecord: record)
+					.padding(.horizontal, 26)
+			}
+		}.environmentObject(ViewRouter())
     }
 }

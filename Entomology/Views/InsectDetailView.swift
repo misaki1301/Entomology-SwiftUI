@@ -33,7 +33,7 @@ struct InsectDetailView: View {
 				city: record.location,
 				latitude: record.geolocate?.latitude ?? 0,
 				longitude: record.geolocate?.longitude ?? 0,
-				location: $region
+				record: $record, location: $region
 			)
 			.padding(.horizontal, 26)
 		}.onAppear {
