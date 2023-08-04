@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AD0A621D2A7057F800FE58BE /* ReportByInsect.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0A621C2A7057F800FE58BE /* ReportByInsect.swift */; };
+		AD0A621F2A7D367E00FE58BE /* EditCountRecordViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0A621E2A7D367E00FE58BE /* EditCountRecordViewTests.swift */; };
 		AD1B9F132A5E3FE8004582B5 /* Inspection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1B9F122A5E3FE8004582B5 /* Inspection.swift */; };
 		AD1B9F152A5E4103004582B5 /* Inspectable+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1B9F142A5E4103004582B5 /* Inspectable+Model.swift */; };
 		AD48C0232A55AF53001BBE95 /* LocationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD48C0222A55AF53001BBE95 /* LocationViewModelTests.swift */; };
@@ -97,6 +98,7 @@
 
 /* Begin PBXFileReference section */
 		AD0A621C2A7057F800FE58BE /* ReportByInsect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportByInsect.swift; sourceTree = "<group>"; };
+		AD0A621E2A7D367E00FE58BE /* EditCountRecordViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCountRecordViewTests.swift; sourceTree = "<group>"; };
 		AD1B9F122A5E3FE8004582B5 /* Inspection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inspection.swift; sourceTree = "<group>"; };
 		AD1B9F142A5E4103004582B5 /* Inspectable+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Inspectable+Model.swift"; sourceTree = "<group>"; };
 		AD48C0222A55AF53001BBE95 /* LocationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModelTests.swift; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 				AD4EF6042A618F9600B14355 /* InsectDetailViewTests.swift */,
 				F521CFE02A6A7A390092C653 /* CreateInsectViewTests.swift */,
 				F58F09962A7CD28E00969316 /* HomeViewTests.swift */,
+				AD0A621E2A7D367E00FE58BE /* EditCountRecordViewTests.swift */,
 			);
 			path = EntomologyTests;
 			sourceTree = "<group>";
@@ -710,6 +713,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD1B9F152A5E4103004582B5 /* Inspectable+Model.swift in Sources */,
+				AD0A621F2A7D367E00FE58BE /* EditCountRecordViewTests.swift in Sources */,
 				AD4EF6052A618F9600B14355 /* InsectDetailViewTests.swift in Sources */,
 				F521CFE12A6A7A390092C653 /* CreateInsectViewTests.swift in Sources */,
 				F58F09972A7CD28E00969316 /* HomeViewTests.swift in Sources */,

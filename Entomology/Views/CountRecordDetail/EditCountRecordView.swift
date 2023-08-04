@@ -76,6 +76,9 @@ struct EditCountRecordView: View {
 			}
 			Spacer(minLength: 130)
 		}
+		.onReceive(inspection.notice) {
+			self.inspection.visit(self, $0)
+		}
 		.backgroundColor(Color("background"))
     }
 	private func incrementCount() {
