@@ -30,7 +30,7 @@ struct CreateInsectView: View {
 					.textFieldStyle(MaterialTextFieldStyle(isEditing: isEditing))
 			}
 			VStack(alignment: .leading) {
-				Text("Nombre especie")
+				Text("Información adicional")
 				TextField("URL", text: $url)
 					.accessibilityIdentifier("textfield_insect_url")
 					.textFieldStyle(MaterialTextFieldStyle(isEditing: isEditing))
@@ -53,7 +53,7 @@ struct CreateInsectView: View {
 
 struct CreateInsectView_Previews: PreviewProvider {
 	static var previews: some View {
-		var insect = Insect(context: CoreDataProvider.preview.viewContext)
+		let insect = Insect(context: CoreDataProvider.preview.viewContext)
 		NavigationView {
 			CreateInsectView(newInsect: .constant(insect))
 		}
