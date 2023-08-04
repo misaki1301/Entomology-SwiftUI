@@ -75,6 +75,7 @@
 		F58F09442A7851B000969316 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58F09432A7851B000969316 /* Utils.swift */; };
 		F58F09472A78CD3E00969316 /* SwiftPrettyPrint in Frameworks */ = {isa = PBXBuildFile; productRef = F58F09462A78CD3E00969316 /* SwiftPrettyPrint */; };
 		F58F09972A7CD28E00969316 /* HomeViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58F09962A7CD28E00969316 /* HomeViewTests.swift */; };
+		F58F099A2A7CE5E800969316 /* EditCountRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58F09992A7CE5E800969316 /* EditCountRecordView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,6 +166,7 @@
 		F521CFE02A6A7A390092C653 /* CreateInsectViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateInsectViewTests.swift; sourceTree = "<group>"; };
 		F58F09432A7851B000969316 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		F58F09962A7CD28E00969316 /* HomeViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewTests.swift; sourceTree = "<group>"; };
+		F58F09992A7CE5E800969316 /* EditCountRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCountRecordView.swift; sourceTree = "<group>"; };
 		F5A3EE9B2A58DE2700A7422D /* Entomology.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Entomology.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -334,6 +336,7 @@
 		AD58D00E2A2658E500154EDF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F58F09982A7CE5CB00969316 /* CountRecordDetail */,
 				AD58D0132A26618400154EDF /* Extensions */,
 				ADB6F07A2A2F278B009294CF /* Components */,
 				AD4EF6062A65841B00B14355 /* InsectForm */,
@@ -470,6 +473,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F58F09982A7CE5CB00969316 /* CountRecordDetail */ = {
+			isa = PBXGroup;
+			children = (
+				F58F09992A7CE5E800969316 /* EditCountRecordView.swift */,
+			);
+			path = CountRecordDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -680,6 +691,7 @@
 				AD58D01C2A27F57400154EDF /* ImagePicker.swift in Sources */,
 				ADB6F0772A2E7AD7009294CF /* CoreDataModel.swift in Sources */,
 				AD8E22922A437839009AD822 /* InsectDetailCard.swift in Sources */,
+				F58F099A2A7CE5E800969316 /* EditCountRecordView.swift in Sources */,
 				AD4EF6082A6729BC00B14355 /* CreateInsectView.swift in Sources */,
 				ADB6F0842A2F29A6009294CF /* MaterialFabButton.swift in Sources */,
 				ADB6F0802A2F27D5009294CF /* MaterialButton.swift in Sources */,
