@@ -7,15 +7,19 @@
 
 import MapKit
 import SwiftUI
+import SwiftPrettyPrint
 
 struct HomeView: View {
+	internal let inspection = Inspection<Self>()
+	
 	@Environment(\.managedObjectContext) private var viewContext
 	@EnvironmentObject var entomologistViewModel: EntomologistViewModel
 	@EnvironmentObject var viewRouter: ViewRouter
 
 	@FetchRequest(fetchRequest: CountRecord.getByDate())
 	private var countRecordsResults: FetchedResults<CountRecord>
-
+	
+	@State var listInsectsCount: [InsectModel] = []
 	@State private var region = MKCoordinateRegion(
 		center: CLLocationCoordinate2D(
 			latitude: 35.30487705019497,
@@ -56,6 +60,9 @@ struct HomeView: View {
 					if showRecords {
 						VStack {
 							HStack(spacing: 16) {
+								Image(systemName: "circle.fill")
+									.font(.custom("", size: 12))
+									.foregroundColor(.black.opacity(0.8))
 								Text("Nuevo conteo")
 									.accessibilityIdentifier("new_count_label")
 									.foregroundColor(Color("font_label_primary"))
@@ -91,7 +98,11 @@ struct HomeView: View {
 						}
 					} else {
 						VStack {
-							Text("Show GG")
+							ReportByInsect(insects: $listInsectsCount)
+								.frame(height: 468)
+								.onAppear {
+									loadResumeBySpecimen()
+								}
 							Spacer()
 						}
 					}
@@ -108,6 +119,16 @@ struct HomeView: View {
 		.onAppear {
 			entomologistViewModel.getUser()
 		}
+		.onReceive(inspection.notice) {
+			self.inspection.visit(self, $0)
+		}
+	}
+	
+	private func loadResumeBySpecimen() {
+		let listDict = Insect.fetchTotalCountPerInsect()
+		Pretty.prettyPrint(Insect.fetchTotalCountPerInsect())
+		listInsectsCount = InsectModel.convertToModel(for: listDict ?? [])
+		Pretty.prettyPrint($listInsectsCount)
 	}
 }
 

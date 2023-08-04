@@ -8,11 +8,7 @@
 import CoreData
 import Foundation
 
-public class Entomologist: NSManagedObject {
-	func changeUrlPhoto(type: String) {}
-
-	func changeGeoLocationPhoto() {}
-}
+public class Entomologist: NSManagedObject {}
 
 public extension Entomologist {
 	@NSManaged var name: String?
