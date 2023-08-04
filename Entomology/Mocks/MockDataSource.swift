@@ -37,14 +37,14 @@ class MockDataSource {
 		entity.urlPhoto = UIImage(named: "paul")?.pngData()
 		try entity.save()
 		
-		// create countrecord
+		// create countrecord = 20 abejas
 		let count1 = CountRecord(context: context)
 		count1.count = 20
 		count1.comment = "wow, such amount of insects I found yesterday"
 		count1.createdAt = Date()
 		count1.entomologist = entity
 		count1.location = "Lima, Peru"
-		count1.insect = dataInsects[0]
+		count1.insect = dataInsects.first{$0.speciesName == "Abeja"}
 
 		let count2 = CountRecord(context: context)
 		count2.count = 3
@@ -52,7 +52,7 @@ class MockDataSource {
 		count2.entomologist = entity
 		count2.createdAt = Date()
 		count2.location = "Lima, Peru"
-		count2.insect = dataInsects[1]
+		count2.insect = dataInsects.first{$0.speciesName == "Morpho"}
 		try context.save()
 
 		AppData.defaultTestUserId = entity.objectID.uriRepresentation().absoluteString
