@@ -36,7 +36,7 @@ final class InsectCountRecordViewTests: XCTestCase {
 	}
 	
 	func testSaveToEntomologist() throws {
-		let context = CoreDataProvider.currentContext
+		let context = CoreDataProvider.preview.viewContext
 		let insect = Insect(context: context)
 		insect.speciesName = "desconocido"
 		insect.localePhoto = UIImage(named: "ant")?.pngData()

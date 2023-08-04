@@ -24,7 +24,6 @@ struct UserProfileImageView: View {
 }
 
 struct UserProfileImageView_Previews: PreviewProvider {
-	@State var showOptions = false
 	static var previews: some View {
 		UserProfileImageView(imageProfile: .constant(UIImage(named: "newphoto")!))
 	}
