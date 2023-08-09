@@ -25,6 +25,8 @@ struct InsectDetailCard: View {
 	var city: String?
 	var latitude: Double
 	var longitude: Double
+	@Binding var record: CountRecord
+	@State var goToEdit = false
 	@Binding var location: MKCoordinateRegion
 	var body: some View {
 		VStack(alignment: .leading, spacing: 0) {
@@ -80,7 +82,9 @@ struct InsectDetailCard: View {
 			HStack {
 				Spacer()
 				MaterialOutlinedButton(text: "Guardar", action: {})
-				MaterialFlatButton(text: "Editar", action: {})
+				NavigationLink(destination: EditCountRecordView(record: $record), isActive: $goToEdit) {
+					MaterialFlatButton(text: "Editar", action: {goToEdit.toggle()})
+				}.isDetailLink(false)
 			}.padding(16)
 		}
 		.background(Color("card_background"))
@@ -90,6 +94,8 @@ struct InsectDetailCard: View {
 
 struct InsectDetailCard_Previews: PreviewProvider {
 	static var previews: some View {
+		let context = CoreDataProvider.currentContext
+		let record = try! context.fetch(CountRecord.getByDate())[0]
 		let coordinates = CLLocationCoordinate2D(latitude: 35.30487705019497, longitude: 139.48254879527659)
 		let region = MKCoordinateRegion(center: coordinates, span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02))
 		let image = "https://es.wikipedia.org/wiki/Morpho#/media/Archivo:Morpho_didius_Male_Dos_MHNT.jpg"
@@ -103,6 +109,6 @@ struct InsectDetailCard_Previews: PreviewProvider {
 			city: "Lando, Canada",
 			latitude: 31.231,
 			longitude: -123.22,
-			location: .constant(region))
+			record: .constant(record), location: .constant(region))
 	}
 }
