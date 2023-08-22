@@ -126,7 +126,7 @@ struct ReportByInsectView: View {
 			}
 		}
 		.onAppear {
-			getLocations()
+				getLocations()
 		}
 		.onReceive(inspection.notice) {
 			self.inspection.visit(self, $0)
@@ -136,26 +136,28 @@ struct ReportByInsectView: View {
     }
 	
 	private func getLocations() {
-		guard let item = countRecords.first else {
-			return
-		}
-		record = InsectCount(
-			name: item.insect?.speciesName ?? "",
-			count: 0,
-			location: item.location,
-			imageData: item.insect?.localePhoto,
-			imageUrl: item.insect?.urlPhoto ?? "",
-			createdAt: item.createdAt,
-			description: item.insect?.moreInfoUrl ?? "",
-			locations: [])
-		record?.count = countRecords.reduce(0, {x, y in x + y.count})
-		
-		locations = countRecords.map({ item in
+		if !countRecords.isEmpty {
+			guard let item = countRecords.first else {
+				return
+			}
+			record = InsectCount(
+				name: item.insect?.speciesName ?? "",
+				count: 0,
+				location: item.location,
+				imageData: item.insect?.localePhoto,
+				imageUrl: item.insect?.urlPhoto ?? "",
+				createdAt: item.createdAt,
+				description: item.insect?.moreInfoUrl ?? "",
+				locations: [])
+			record?.count = countRecords.reduce(0, {x, y in x + y.count})
 			
-			return CityLocations(latitude: item.geolocate?.latitude ?? 0, longitude: item.geolocate?.longitude ?? 0, location: item.location)
-		})
-		record?.locations = locations
-		//print(locations)
+			locations = countRecords.map({ item in
+				
+				return CityLocations(latitude: item.geolocate?.latitude ?? 0, longitude: item.geolocate?.longitude ?? 0, location: item.location)
+			})
+			record?.locations = locations
+			//print(locations)
+		}
 	}
 }
 

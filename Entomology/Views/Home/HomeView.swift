@@ -8,6 +8,7 @@
 import MapKit
 import SwiftUI
 import SwiftPrettyPrint
+import MountainViewUI
 
 struct HomeView: View {
 	internal let inspection = Inspection<Self>()
@@ -107,12 +108,17 @@ struct HomeView: View {
 						}
 					}
 					HStack {
-						MaterialButton(text: "Informes", action: { showRecords.toggle() })
-							.disabled(!showRecords)
-						Spacer()
-						MaterialButton(text: "Registros", action: { showRecords.toggle() })
-							.disabled(showRecords)
-					}
+						if !showRecords {
+							MountainViewButton(text: "Informes", action: {}, buttonStyle: MountainOutlinedButtonStyle())
+							Spacer()
+							MountainViewButton(text: "Registros", action: {showRecords.toggle()}, buttonStyle: MountainButtonStyle())
+						} else {
+							MountainViewButton(text: "Informes", action: {showRecords.toggle()
+							}, buttonStyle: MountainButtonStyle())
+							Spacer()
+							MountainViewButton(text: "Registros", action: {}, buttonStyle: MountainOutlinedButtonStyle())
+						}
+					}.padding(.horizontal, 25)
 				}.padding(.horizontal, 26)
 			}.backgroundColor(Color("background"))
 		}
