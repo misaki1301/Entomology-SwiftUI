@@ -81,4 +81,31 @@ extension Insect: Model {
 			return nil
 		}
 	}
+	
+	static func fetchTotalCountByName(for searchTerm: String) -> [[String: Any]]? {
+		let request = NSFetchRequest<NSDictionary>(entityName: "Insect")
+		
+		let sumExpression = NSExpressionDescription()
+		sumExpression.name = "totalCount"
+		sumExpression.expression = NSExpression(format: "@sum.countRecords.count")
+		sumExpression.expressionResultType = .integer32AttributeType
+		
+		request.propertiesToFetch = ["speciesName", "urlPhoto", "localePhoto", "locate", "moreInfoUrl", sumExpression]
+		
+		request.propertiesToGroupBy = ["speciesName", "urlPhoto", "localePhoto", "locate", "moreInfoUrl"]
+		
+		request.predicate = NSPredicate(format: "speciesName BEGINSWITH[c] %@", searchTerm)
+		
+		request.resultType = .dictionaryResultType
+		
+		do {
+			let context = CoreDataProvider.currentContext
+			let result = try context.fetch(request)
+			return convertToSwiftDictionaries(from: result)
+		} catch {
+			print("Error fetching data: \(error)")
+			return nil
+		}
+		
+	}
 }

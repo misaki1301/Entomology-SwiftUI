@@ -39,4 +39,11 @@ extension CountRecord: Model {
 		request.sortDescriptors = [NSSortDescriptor(key: "createdAt", ascending: false)]
 		return request
 	}
+	
+	static func getByName(for searchTerm: String) -> NSFetchRequest<CountRecord> {
+		let request = CountRecord.fetchRequest()
+		request.predicate = NSCompoundPredicate(format: "insect.speciesName == %@", searchTerm)
+		request.sortDescriptors = []
+		return request
+	}
 }

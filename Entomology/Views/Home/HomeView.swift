@@ -126,7 +126,6 @@ struct HomeView: View {
 	
 	private func loadResumeBySpecimen() {
 		let listDict = Insect.fetchTotalCountPerInsect()
-		Pretty.prettyPrint(Insect.fetchTotalCountPerInsect())
 		listInsectsCount = InsectModel.convertToModel(for: listDict ?? [])
 		Pretty.prettyPrint($listInsectsCount)
 	}

@@ -56,9 +56,20 @@ struct ReportByInsect: View {
 					.padding(.all, 24)
 				List {
 						ForEach(insects, id: \.self) { item in
-							ReportCountItem(insect: item, geospace: geo)
-								.padding(.horizontal, 16)
-								.padding(.vertical, 4)
+							ZStack {
+								NavigationLink(destination: ReportByInsectView(insectName: item.speciesName)
+								) {
+									EmptyView()
+								}
+								.isDetailLink(false)
+								.opacity(0)
+								ReportCountItem(insect: item, geospace: geo)
+									.padding(.horizontal, 16)
+									.padding(.vertical, 4)
+								
+							}
+							.listRowBackground(Color.clear)
+							.listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
 						}.listStyle(.plain)
 					
 				}

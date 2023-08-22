@@ -54,6 +54,15 @@ class MockDataSource {
 		count2.location = "Lima, Peru"
 		count2.insect = dataInsects.first{$0.speciesName == "Morpho"}
 		try context.save()
+		
+		let count3 = CountRecord(context: context)
+		count3.count = 10
+		count3.comment = "wow, such amount of insects I found yesterday"
+		count3.entomologist = entity
+		count3.createdAt = Date()
+		count3.location = "Lima, Peru"
+		count3.insect = dataInsects.first{$0.speciesName == "Morpho"}
+		try context.save()
 
 		AppData.defaultTestUserId = entity.objectID.uriRepresentation().absoluteString
 	}
